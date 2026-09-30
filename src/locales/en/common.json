@@ -118,7 +118,7 @@
   "sidebar": {
     "fixActionNames": {
       "title": "Fix Action Names",
-      "description": "Standardize action names across all blocks in the open flow. Choose action types and customize their templates.",
+      "description": "Standardize action names across all blocks in the open flow.",
       "help": "Use {{field}} to insert a value from the action settings. Example: Track \"{{category}}\". Only names change; values, conditions and scripts stay the same.",
       "track": "Tracking · TrackEvent",
       "script": "Script · ExecuteScript / V2",
@@ -129,8 +129,10 @@
       "simplify": "Display variables as {variable} in names, as in the original script, instead of {{variable}}.",
       "preview": "Preview names",
       "apply": "Apply",
-      "reset": "Reset templates",
-      "saved": "Templates are saved after you confirm the changes. Resetting templates does not undo flow changes.",
+      "reset": "Restore defaults",
+      "saved": "Configure templates in the popup. Restoring defaults does not undo changes already made to the flow.",
+      "typesActive": "active types",
+      "configureInPopup": "Edit types and templates in Blip Addons 2.0 → Action names. Apply changes only to the open flow, after confirmation.",
       "selectType": "Select at least one action type.",
       "emptyTemplate": "Fill in the templates for all selected types.",
       "unavailable": "The flow could not be accessed. Wait for the Builder to finish loading and try again.",
@@ -146,6 +148,7 @@
     "title": "Blip Addons",
     "globalInactivity": {
       "title": "Add global inactivity",
+      "restore": "Restore default (remove global inactivity)",
       "paragraph1": {
         "text1": "All blocks that wait for a user input will have their waiting time limit set to the value below.",
         "text2": "You still need to publish the flow."
@@ -279,6 +282,31 @@
     }
   },
   "toastContainer": {
+    "popupNavigation": {
+      "home": "Overview",
+      "homeDescription": "Configure extension features and customize your Builder experience.",
+      "navigation": "Extension navigation",
+      "builder": "Builder",
+      "personalization": "Personalization",
+      "advanced": "Advanced",
+      "integrations": "Builder integrations",
+      "integrationsDescription": "Explore the services available in New integration.",
+      "keywordsDescription": "Identify environments using keywords.",
+      "snippetsDescription": "Create reusable code snippets.",
+      "tagsDescription": "Customize block tags.",
+      "devDescription": "Adjust advanced extension features.",
+      "builderHint": "In Builder, open General settings → Builder 2.0 to apply changes to the flow.",
+      "version": "Version",
+      "loading": "Loading settings…"
+    },
+    "actionNamesConfig": {
+      "title": "Action names",
+      "description": "Select action types and edit the templates used by Fix Action Names.",
+      "availableFields": "Available fields:",
+      "save": "Save templates",
+      "saved": "Templates saved. The Builder 2.0 tab can now use them.",
+      "restored": "Default templates restored. No flow was changed."
+    },
     "modulesConfig": {
       "title": "Builder modules",
       "description": "Choose which modules you want to use in Builder.",

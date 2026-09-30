@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Blip Addons 2.0",
-  "version": "2.5.1",
+  "version": "2.6.2",
   "description": "Integrações do Better Blip Builder e utilitários do Blip Addons em uma única extensão.",
   "icons": { "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
   "action": { "default_title": "Blip Addons 2.0", "default_popup": "popup.html" },

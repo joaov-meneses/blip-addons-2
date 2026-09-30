@@ -5,6 +5,7 @@ import { BdsIcon } from 'blip-ds/dist/blip-ds-react';
 
 export type BlipAccordionButtonProps = {
   title: string;
+  compact?: boolean;
 };
 
 const ARROW_RIGHT = 'arrow-right';
@@ -12,6 +13,7 @@ const ARROW_DOWN = 'arrow-down';
 
 export const BlipAccordionButton = ({
   title,
+  compact = false,
 }: BlipAccordionButtonProps): JSX.Element => {
   const [arrowState, setArrowState] = React.useState(ARROW_RIGHT);
 
@@ -30,19 +32,22 @@ export const BlipAccordionButton = ({
         _hover={{ bgColor: 'none' }}
         bgColor="transparent"
         onClick={switchArrowState}
-        paddingTop={10.1}
-        paddingX={5.1}
-        mb={2}
+        paddingTop={compact ? 2 : 10.1}
+        paddingBottom={compact ? 2 : undefined}
+        paddingX={compact ? 1 : 5.1}
+        mb={compact ? 0 : 2}
+        minHeight={compact ? '44px' : undefined}
+        textAlign="left"
         border={0}
         cursor="pointer"
       >
         <BdsIcon
           color="#A9C0C5"
           name={arrowState}
-          size="x-large"
+          size={compact ? 'small' : 'x-large'}
           theme="outline"
         />
-        <Title>{title}</Title>
+        {compact ? <span className="addons-tags-action-name">{title}</span> : <Title>{title}</Title>}
       </AccordionButton>
     </>
   );

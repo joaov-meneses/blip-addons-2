@@ -64,7 +64,7 @@ function builder(t) {
   return { win, messages, errors, controller, load, sendFeature, MonacoEditor };
 }
 
-test('Fix Action Names confirms before changing the current flow and saves templates', async t => {
+test('Fix Action Names uses popup templates, confirms changes and restores defaults without editing the flow', async t => {
   const { win, controller, load, sendFeature, errors, messages } = builder(t);
   const tracking = { type: 'TrackEvent', $title: 'Original', settings: { category: 'Venda', action: 'OK' } };
   const script = { type: 'ExecuteScript', $title: 'Script original', settings: { outputVariable: 'result', source: 'function run() {}' } };
@@ -81,17 +81,21 @@ test('Fix Action Names confirms before changing the current flow and saves templ
     '</bds-tab-group></div>';
   win.document.getElementById('main-content-area').appendChild(provider);
   load('js/listener.js');
-  win.postMessage({ channel: 'blip-addons-2', isSettingsUpdate: true, isFromClient: false, newSettings: { modules: { qualityChecker: true } } });
+  const configuredRules = [
+    { type: 'TrackEvent', enabled: true, template: 'Evento {{category}} / {{category}}' },
+    { type: 'ExecuteScript', enabled: false, template: 'Process "{{outputVariable}}"' },
+  ];
+  win.postMessage({ channel: 'blip-addons-2', isSettingsUpdate: true, isFromClient: false,
+    newSettings: { modules: { qualityChecker: true }, actionNameRules: configuredRules } });
   sendFeature('ADD_BUILDER_SETTINGS_TAB');
   await tick();
   const tab = provider.querySelector('#blip-addons-general-tab');
   const headers = [...tab.querySelectorAll('.addons-general-header')].map(node => node.textContent);
   assert.equal(headers[headers.indexOf('Quality Checker') + 1], 'Fix Action Names');
   const form = () => provider.querySelector('#general-fix-action-names-form');
-  const input = () => form().querySelector('[data-action-name-type="TrackEvent"] bds-input');
-  input().value = 'Evento {{category}} / {{category}}';
-  input().dispatchEvent(new win.CustomEvent('bdsChange', { bubbles: true }));
-  form().querySelector('[name="fix-action-ExecuteScript"]').click();
+  assert.match(form().textContent, /tipos ativos/);
+  assert.equal(form().querySelector('[data-action-name-type]'), null);
+  assert.equal(form().querySelector('#general-fix-action-names-reset').getAttribute('aria-label'), 'Restaurar padrões');
   assert.equal(form().querySelector('#general-fix-action-names-preview'), null);
   form().querySelector('#general-fix-action-names-apply').click();
   await tick();
@@ -122,17 +126,19 @@ test('Fix Action Names confirms before changing the current flow and saves templ
   await tick();
   sendFeature('ADD_BUILDER_SETTINGS_TAB');
   await tick();
-  assert.equal(input().value, 'Evento {{category}} / {{category}}');
-  assert.equal(form().querySelector('[name="fix-action-ExecuteScript"]').checked, false);
-  input().value = '';
-  input().dispatchEvent(new win.CustomEvent('bdsChange', { bubbles: true }));
+  assert.match(form().textContent, /tipos ativos/);
+  win.postMessage({ channel: 'blip-addons-2', isSettingsUpdate: true, isFromClient: false,
+    newSettings: { actionNameRules: [{ type: 'TrackEvent', enabled: true, template: '' }] } });
+  await tick();
   form().querySelector('#general-fix-action-names-apply').click();
   await tick();
   assert.ok(form().querySelector('[role="alert"]'));
   assert.equal(tracking.$title, 'Evento Atual / Atual');
   form().querySelector('#general-fix-action-names-reset').click();
   await tick();
-  assert.equal(input().value, 'Track "{{category}}"');
+  const resetSettings = messages.filter(message => message.isSettingsUpdate).at(-1).newSettings;
+  assert.equal(resetSettings.actionNameRules[0].template, 'Track "{{category}}"');
+  assert.equal(resetSettings.actionNameRules[1].enabled, true);
   controller.isLoading = true;
   form().querySelector('#general-fix-action-names-apply').click();
   await tick();
@@ -269,6 +275,18 @@ test('native settings tab mounts after global actions, inherits theme and follow
   header.click();
   assert.equal(body.hidden, false);
   assert.equal(header.getAttribute('aria-expanded'), 'true');
+  assert.equal(body.querySelector('.addons-form-actions--full .addons-action--primary').textContent.trim(), 'Definir');
+  assert.match(body.querySelector('.addons-restore-action').getAttribute('aria-label'), /remover inatividade/);
+  tab.querySelector('[data-module="setGlobalTrackings"] .addons-general-header').click();
+  const addTrackings = tab.querySelector('#addons-general-setGlobalTrackings');
+  assert.ok(addTrackings.querySelector('.addons-add-row.addons-action--dashed'));
+  assert.equal(addTrackings.querySelector('.addons-form-actions--full .addons-action--primary').textContent.trim(), 'Definir');
+  tab.querySelector('[data-module="removeGlobalTrackings"] .addons-general-header').click();
+  const removeTrackings = tab.querySelector('#addons-general-removeGlobalTrackings');
+  assert.ok(removeTrackings.querySelector('.addons-add-row.addons-action--dashed'));
+  assert.equal(removeTrackings.querySelectorAll('.addons-form-actions--equal .addons-action').length, 2);
+  tab.querySelector('[data-module="fixActionNames"] .addons-general-header').click();
+  assert.ok(tab.querySelector('#general-fix-action-names-form .addons-form-actions--full .addons-restore-action'));
   const define = body.querySelector('.addons-action--primary');
   define.click();
   await tick();
@@ -388,7 +406,7 @@ test('Addons ignores unrelated messages and ordinary pasted text; clipboard surv
   assert.equal(errors.length, 0, errors.join('\n'));
 });
 
-test('popup loads local chunks and persists language, DEV settings and all eight module switches', async t => {
+test('popup navigation persists action-name templates, language, DEV settings and module switches', async t => {
   const missing = [], errors = [];
   let stored = {};
   class LocalResources extends ResourceLoader {
@@ -418,12 +436,15 @@ test('popup loads local chunks and persists language, DEV settings and all eight
   await new Promise(resolve => dom.window.addEventListener('load', resolve, { once: true }));
   await tick();
   const doc = dom.window.document;
-  assert.match(doc.querySelector('h2').textContent, /Blip Addons 2.0/);
+  assert.match(doc.querySelector('.addons-popup-brand').textContent, /Blip Addons 2.0/);
+  assert.equal(doc.querySelector('h1').textContent, 'Visão geral');
   assert.equal(doc.querySelectorAll('bds-select-option').length, 3);
-  for (const name of ['Configuração de palavra-chave', 'Configuração dos snippets', 'Configuração das tags', 'Módulos do Builder', 'Configurações DEV mode', 'Integrações do Builder']) {
-    [...doc.querySelectorAll('bds-button')].find(button => button.textContent.trim() === name).click();
+  const navigate = name => [...doc.querySelectorAll('.addons-popup-sidebar nav button')]
+    .find(button => button.textContent.trim() === name).click();
+  for (const name of ['Configuração de palavra-chave', 'Configuração dos snippets', 'Configuração das tags', 'Módulos do Builder', 'Nomes das ações', 'Configurações DEV mode', 'Integrações do Builder']) {
+    navigate(name);
     await tick();
-    assert.equal(doc.querySelector('h2').textContent, name);
+    assert.equal(doc.querySelector('h1').textContent, name);
     if (name === 'Módulos do Builder') {
       assert.equal(doc.querySelectorAll('bds-switch').length, 8);
       for (const key of ['checkInconsistencies', 'botStatistics', 'qualityChecker']) {
@@ -443,12 +464,32 @@ test('popup loads local chunks and persists language, DEV settings and all eight
       assert.equal(stored.settings.modules.newIntegration, false);
       assert.equal(stored.settings.modules.qualityChecker, false);
       assert.equal(stored.settings.modules.globalInactivity, true);
-      doc.querySelector('bds-button-icon[icon="arrow-left"]').click();
+      navigate('Visão geral');
       await tick();
-      [...doc.querySelectorAll('bds-button')].find(button => button.textContent.trim() === name).click();
+      navigate(name);
       await tick();
       assert.equal(doc.querySelector('bds-switch[name="botStatistics"]').checked, true);
       assert.equal(doc.querySelector('bds-switch[name="newIntegration"]').checked, false);
+    }
+    if (name === 'Nomes das ações') {
+      const tracking = doc.querySelector('input[data-action-name-type="TrackEvent"]');
+      const nativeSetter = Object.getOwnPropertyDescriptor(dom.window.HTMLInputElement.prototype, 'value').set;
+      nativeSetter.call(tracking, 'Evento {{category}}');
+      tracking.dispatchEvent(new dom.window.Event('input', { bubbles: true }));
+      doc.querySelector('input[name="popup-fix-action-ExecuteScript"]').click();
+      doc.querySelector('.addons-popup-button--primary').click();
+      await tick();
+      assert.equal(stored.settings.actionNameRules[0].template, 'Evento {{category}}');
+      assert.equal(stored.settings.actionNameRules[1].enabled, false);
+      navigate('Visão geral');
+      await tick();
+      navigate(name);
+      await tick();
+      assert.equal(doc.querySelector('input[data-action-name-type="TrackEvent"]').value, 'Evento {{category}}');
+      doc.querySelector('.addons-popup-button--quiet').click();
+      await tick();
+      assert.equal(stored.settings.actionNameRules[0].template, 'Track "{{category}}"');
+      assert.equal(stored.settings.actionNameRules[1].enabled, true);
     }
     if (name === 'Configurações DEV mode') {
       assert.equal(doc.querySelectorAll('bds-switch').length, 6);
@@ -458,7 +499,7 @@ test('popup loads local chunks and persists language, DEV settings and all eight
       assert.equal(stored.settings.devMode.hideLibraryFunction, false);
     }
     if (name === 'Integrações do Builder') assert.equal(doc.querySelectorAll('.addons-integrations span').length, 13);
-    doc.querySelector('bds-button-icon[icon="arrow-left"]').click();
+    navigate('Visão geral');
     await tick();
   }
   doc.querySelector('bds-select').dispatchEvent(new dom.window.CustomEvent('bdsChange', { detail: { value: 'en' } }));
@@ -466,7 +507,7 @@ test('popup loads local chunks and persists language, DEV settings and all eight
   assert.equal(stored.settings.language, 'en');
   assert.equal(errors.length, 0, errors.join('\n'));
   const english = JSON.parse(fs.readFileSync(path.join(root, 'src/locales/en/common.json'), 'utf8'));
-  assert.equal(doc.querySelector('h2').textContent, english.toastContainer.title.replace('Blip Addons', 'Blip Addons 2.0'));
+  assert.equal(doc.querySelector('h1').textContent, english.toastContainer.popupNavigation.home);
   assert.equal(missing.length, 0, missing.join('\n'));
   assert.equal(errors.length, 0, errors.join('\n'));
 });

@@ -1,10 +1,9 @@
 # Blip Addons 2.0
 
-Extensão Chrome Manifest V3 que reúne o **Better Blip Builder 3.0.46** e o **Blip Addons 1.3.9**, incluindo a interface e os recursos da versão instalada fornecida pelo usuário. Versão atual do pacote: **2.5.1**.
+Extensão Chrome Manifest V3 que reúne o **Better Blip Builder 3.0.46** e o **Blip Addons 1.3.9**, incluindo a interface e os recursos da versão instalada fornecida pelo usuário. Versão atual do pacote: **2.6.2**.
 
-- Pacote de instalação: `release/Blip-Addons-2.5.1.zip`.
-- Projeto com fontes: `release/Blip-Addons-2.5.1-fonte.zip`.
-- Pasta pronta para **Carregar sem compactação**: `dist/`.
+- [ZIP para instalação facilitada: Blip-Addons-2.6.2.zip](instalacao/Blip-Addons-2.6.2.zip). Ele já vem com a pasta `dist` pronta e está incluído no repositório.
+- Quem recompilar o projeto também pode selecionar a pasta `dist/` gerada localmente.
 - [Instruções de instalação](docs/INSTALACAO.md).
 - [Habilitar/desabilitar módulos e Nova integração](docs/INSTALACAO.md#configurar-os-módulos).
 - [Análise do funcionamento e da união](docs/ANALISE.md).
@@ -12,6 +11,15 @@ Extensão Chrome Manifest V3 que reúne o **Better Blip Builder 3.0.46** e o **B
 - [Fix Action Names: configuração, funcionamento e atualização 2.2.0](docs/FIX-ACTION-NAMES.md).
 - [Validação](docs/VALIDACAO.md).
 - [Créditos e licenças](THIRD_PARTY_NOTICES.md).
+
+## Instalação rápida no Chrome
+
+1. Baixe o [ZIP de instalação](instalacao/Blip-Addons-2.6.2.zip) deste repositório e **extraia** seu conteúdo em uma pasta permanente. Dentro da extração haverá uma pasta chamada `dist`, que contém `manifest.json`.
+2. No Chrome, acesse `chrome://extensions` e ative **Modo do desenvolvedor** no canto superior direito.
+3. Clique em **Carregar sem compactação** e selecione **a pasta `dist` extraída**. Selecione a pasta, não o arquivo ZIP nem a pasta acima dela.
+4. Confirme que **Blip Addons 2.0** aparece na lista e recarregue as abas da Blip que já estavam abertas.
+
+Para evitar recursos duplicados, desative as extensões antigas **Better Blip Builder** e **Blip Addons** se estiverem instaladas. O ZIP é para extração e carregamento sem compactação; não precisa de Node.js para instalar. Veja [instruções de atualização e uso](docs/INSTALACAO.md).
 
 ## Recompilar
 
@@ -24,7 +32,7 @@ npm test
 npm run package
 ```
 
-`npm run package` recompila, testa e gera os dois ZIPs e `SHA256SUMS.txt`.
+`npm run package` recompila, testa, atualiza o ZIP pronto em `instalacao/` e gera os ZIPs de distribuição e fontes em `release/`, além dos hashes SHA-256. `dist/` e `release/` ficam fora do Git; o ZIP em `instalacao/` é o arquivo distribuído pelo repositório.
 `npm ci` usa o lockfile; `--legacy-peer-deps` mantém a compatibilidade das dependências do projeto original.
 
 ## Estrutura
@@ -52,3 +60,9 @@ A versão 2.4.0 acrescenta a aba nativa **Blip Builder 2.0** à direita de **Aç
 A versão 2.5.0 renomeia essa aba para **Builder 2.0**, concentra os utilitários nela e remove a estrelinha da barra lateral. Os formulários usam botões e espaçamento consistentes com o tema da Blip. Em Fix Action Names, **Aplicar** abre a confirmação antes de alterar o fluxo; o ícone à direita restaura os modelos padrão.
 
 A versão 2.5.1 corrige a inicial maiúscula do botão **Definir** em Inatividade global.
+
+A versão 2.6.0 reorganiza o popup em navegação lateral inspirada no projeto Create Templates. Os modelos de **Fix Action Names** passam a ser configurados em **Nomes das ações** no popup; o painel do Builder mostra um resumo, **Aplicar** e a restauração de padrões. Os botões de inatividade e trackings usam toda a largura disponível e os comandos de adicionar linha têm borda tracejada.
+
+A versão 2.6.1 reduz a altura e a tipografia das linhas de ações em **Configuração das tags** no popup.
+
+A versão 2.6.2 remove o botão **Reportar um problema** do menu lateral do popup.

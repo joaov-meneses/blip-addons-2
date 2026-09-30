@@ -1,18 +1,18 @@
-# Fix Action Names — pacote 2.5.0
+# Fix Action Names — pacote 2.6.0
 
 A seção **Fix Action Names** fica na aba **Builder 2.0** das configurações gerais, imediatamente abaixo de **Quality Checker** quando esse módulo está habilitado.
 
 ## Como usar
 
-1. Abra o bot no Builder, entre em **Configurações gerais → Builder 2.0** e expanda **Fix Action Names**.
-2. Marque os tipos de ação que deseja renomear e edite seus modelos.
+1. No popup da extensão, abra **Nomes das ações**, marque os tipos desejados, edite os modelos e clique em **Salvar modelos**.
+2. Abra o bot no Builder, entre em **Configurações gerais → Builder 2.0** e expanda **Fix Action Names**. O painel mostra um resumo dos tipos ativos.
 3. Clique em **Aplicar**. A janela de confirmação aparece antes de qualquer mudança no fluxo. **Cancelar** preserva os nomes atuais.
 4. Ao confirmar, a extensão calcula os nomes usando o fluxo atual e altera somente o campo `$title` das ações selecionadas. O resultado mostra a contagem e até dez exemplos de antes/depois.
 5. Revise o fluxo e use os comandos normais de salvar/publicar do Builder. A extensão não chama a publicação.
 
-Os modelos são compartilhados entre os bots desta instalação, como as outras preferências do Addons. São salvos em `chrome.storage.sync` após a confirmação. Nomes gerados, valores de ações e conteúdo do fluxo não são enviados ao armazenamento de preferências.
+Os modelos são compartilhados entre os bots desta instalação, como as outras preferências do Addons. São salvos em `chrome.storage.sync` pelo popup, independentemente de aplicar a operação. Nomes gerados, valores de ações e conteúdo do fluxo não são enviados ao armazenamento de preferências.
 
-O botão com ícone de seta circular à direita de **Aplicar** preenche novamente os padrões abaixo. Ele não desfaz nomes já aplicados. Para salvar os padrões restaurados, clique em **Aplicar** e confirme.
+O botão com ícone de seta circular à direita de **Aplicar** restaura e salva os modelos padrão abaixo, sem modificar o fluxo. Ele não desfaz nomes já aplicados.
 
 ## Modelos iniciais
 
@@ -47,6 +47,6 @@ Nesses recursos, “global” indica uma operação em vários blocos do fluxo a
 
 ## Validação
 
-Build concluído e 19 testes automatizados aprovados. Os testes verificam os modelos, V2, campos ausentes, repetição, valores de variáveis, preservação das configurações, confirmação e cancelamento sem mutação, tipos desmarcados e persistência ao reabrir a aba.
+Build concluído e 19 testes automatizados aprovados. Os testes verificam os modelos, V2, campos ausentes, repetição, valores de variáveis, preservação das configurações, confirmação e cancelamento sem mutação, tipos desmarcados, persistência no popup e leitura das preferências pelo painel aberto.
 
 A interface 2.5.0 foi inspecionada no Chrome conectado ao contrato Ember. O botão **Aplicar** abriu a confirmação e o cancelamento encerrou a janela sem alterar o fluxo. O ícone de restauração e a disposição dos controles foram conferidos no tema escuro. Nenhum bot real foi alterado nesta entrega.

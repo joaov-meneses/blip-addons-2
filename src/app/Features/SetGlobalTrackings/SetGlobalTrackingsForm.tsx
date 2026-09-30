@@ -181,6 +181,10 @@ export const SetGlobalTrackingsForm = (): JSX.Element => {
       <Block marginTop={2} marginBottom={2}>
         {getGlobalTrackingLine()}
 
+        <button type="button" className="addons-action addons-action--dashed addons-add-row" onClick={addNewLine}>
+          {t('sidebar.setGlobalTrackings.horizontalStack.buttonAdd')}
+        </button>
+
         <div className="addons-form-option">
           <Switch
             isChecked={shouldDeleteCurrentExtras}
@@ -193,11 +197,7 @@ export const SetGlobalTrackingsForm = (): JSX.Element => {
           </BdsTypo>
         </div>
 
-        <div className="addons-form-actions">
-          <button type="button" className="addons-action addons-action--secondary" onClick={addNewLine}>
-            {t('sidebar.setGlobalTrackings.horizontalStack.buttonAdd')}
-          </button>
-
+        <div className="addons-form-actions addons-form-actions--full">
           <button type="button" className="addons-action addons-action--primary" onClick={handleSubmit}>
             {t('sidebar.setGlobalTrackings.horizontalStack.buttonDefine')}
           </button>

@@ -1,6 +1,6 @@
 {
   "name": "blip-addons-2",
-  "version": "2.5.1",
+  "version": "2.6.2",
   "description": "Blip Addons 2.0 — utilitários e integrações para o Blip Builder",
   "scripts": {
     "build": "node scripts/build.cjs",

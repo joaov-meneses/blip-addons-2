@@ -42,6 +42,8 @@ export const mergeSettings = (newSettings: Partial<typeof Settings>): void => {
   if (!newSettings || typeof newSettings !== 'object') return;
   const previousModules = JSON.stringify(Settings.modules);
   const previousLanguage = Settings.language;
+  const previousActionRules = JSON.stringify(Settings.actionNameRules);
+  const previousSimplify = Settings.actionNameSimplifyVariables;
   for (const key of Object.keys(Settings)) {
     const value = newSettings[key];
     if (key === 'modules') {
@@ -65,7 +67,8 @@ export const mergeSettings = (newSettings: Partial<typeof Settings>): void => {
       Settings[key] = value;
     }
   }
-  if (previousModules !== JSON.stringify(Settings.modules) || previousLanguage !== Settings.language) {
+  if (previousModules !== JSON.stringify(Settings.modules) || previousLanguage !== Settings.language ||
+      previousActionRules !== JSON.stringify(Settings.actionNameRules) || previousSimplify !== Settings.actionNameSimplifyVariables) {
     subscribers.forEach(callback => callback());
   }
 };

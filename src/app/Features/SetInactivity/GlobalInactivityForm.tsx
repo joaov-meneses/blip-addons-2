@@ -12,6 +12,7 @@ import { SetInactivity } from '@features/SetInactivity';
 import { RemoveInactivity } from '@features/RemoveInactivity';
 import { createConfirmationAlert, removeOverlay } from '~/Utils';
 import { t } from '../../../i18n';
+import { RestoreButton } from '~/Components/RestoreButton';
 
 export const GlobalInactivityForm = (): JSX.Element => {
   const [waitingTime, setWaitingTime] = React.useState(
@@ -96,14 +97,11 @@ export const GlobalInactivityForm = (): JSX.Element => {
           </BdsTypo>
         </div>
 
-        <div className="addons-form-actions">
+        <div className="addons-form-actions addons-form-actions--full">
           <button type="button" className="addons-action addons-action--primary" onClick={handleSubmit}>
             {t('sidebar.globalInactivity.horizontalStack.buttonSubmit')}
           </button>
-
-          <button type="button" className="addons-action addons-action--secondary" onClick={handleRemove}>
-            {t('sidebar.globalInactivity.horizontalStack.buttonRemove')}
-          </button>
+          <RestoreButton label={t('sidebar.globalInactivity.restore')} onClick={handleRemove} />
         </div>
 
         <div className="addons-form-note"><Paragraph>

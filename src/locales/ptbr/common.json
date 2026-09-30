@@ -118,7 +118,7 @@
   "sidebar": {
     "fixActionNames": {
       "title": "Fix Action Names",
-      "description": "Padronize os nomes das ações de todos os blocos do fluxo aberto. Escolha os tipos e personalize seus modelos.",
+      "description": "Padronize os nomes das ações de todos os blocos do fluxo aberto.",
       "help": "Use {{campo}} para inserir um valor da configuração da ação. Exemplo: Track \"{{category}}\". Os nomes são alterados; valores, condições e scripts permanecem iguais.",
       "track": "Tracking · TrackEvent",
       "script": "Script · ExecuteScript / V2",
@@ -129,8 +129,10 @@
       "simplify": "Exibir variáveis como {variavel} nos nomes, como no script original, em vez de {{variavel}}.",
       "preview": "Visualizar prévia",
       "apply": "Aplicar",
-      "reset": "Restaurar modelos",
-      "saved": "Os modelos são salvos após confirmar a aplicação. Restaurar modelos não desfaz alterações no fluxo.",
+      "reset": "Restaurar padrões",
+      "saved": "Os modelos são configurados no popup. Restaurar padrões não desfaz alterações já feitas no fluxo.",
+      "typesActive": "tipos ativos",
+      "configureInPopup": "Edite os tipos e modelos em Blip Addons 2.0 → Nomes das ações. Aplicar altera apenas o fluxo aberto, após confirmação.",
       "selectType": "Selecione pelo menos um tipo de ação.",
       "emptyTemplate": "Preencha os modelos dos tipos selecionados.",
       "unavailable": "Não foi possível acessar o fluxo. Aguarde o Builder terminar de carregar e tente novamente.",
@@ -146,6 +148,7 @@
     "title": "Blip Addons",
     "globalInactivity": {
       "title": "Adicionar inatividade global",
+      "restore": "Restaurar padrão (remover inatividade global)",
       "paragraph1": {
         "text1": "Todos os blocos que esperam por uma entrada do usuário terão seu limite de espera setados para o valor abaixo.",
         "text2": "Você ainda precisa publicar o fluxo."
@@ -279,6 +282,31 @@
     }
   },
   "toastContainer": {
+    "popupNavigation": {
+      "home": "Visão geral",
+      "homeDescription": "Configure os recursos da extensão e personalize sua experiência no Builder.",
+      "navigation": "Navegação da extensão",
+      "builder": "Builder",
+      "personalization": "Personalização",
+      "advanced": "Avançado",
+      "integrations": "Integrações do Builder",
+      "integrationsDescription": "Conheça os serviços disponíveis na Nova integração.",
+      "keywordsDescription": "Identifique ambientes por palavras-chave.",
+      "snippetsDescription": "Crie trechos de código reutilizáveis.",
+      "tagsDescription": "Personalize as tags dos blocos.",
+      "devDescription": "Ajuste os recursos avançados da extensão.",
+      "builderHint": "No Builder, abra Configurações gerais → Builder 2.0 para aplicar alterações ao fluxo.",
+      "version": "Versão",
+      "loading": "Carregando configurações…"
+    },
+    "actionNamesConfig": {
+      "title": "Nomes das ações",
+      "description": "Selecione os tipos de ação e edite os modelos usados pelo Fix Action Names.",
+      "availableFields": "Campos disponíveis:",
+      "save": "Salvar modelos",
+      "saved": "Modelos salvos. A aba Builder 2.0 já pode usá-los.",
+      "restored": "Modelos padrão restaurados. Nenhum fluxo foi alterado."
+    },
     "modulesConfig": {
       "title": "Módulos do Builder",
       "description": "Escolha os módulos que você deseja usar no Builder.",

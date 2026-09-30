@@ -57,13 +57,12 @@
 .blip-addons-general .addons-form-actions {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
 }
-.blip-addons-general .addons-form-actions > :last-child:not(:first-child) { margin-left: auto; }
 .blip-addons-general .addons-action,
-.blip-addons-general .addons-icon-action {
+.blip-addons-general .addons-icon-action,
+.blip-addons-general .addons-restore-action {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -91,8 +90,22 @@
 }
 .blip-addons-general .addons-action--secondary:hover,
 .blip-addons-general .addons-icon-action:hover { background: var(--color-surface-1, #e5e9ed); }
+.blip-addons-general .addons-action--dashed {
+  width: 100%;
+  margin-top: 12px;
+  border: 1px dashed var(--color-border-1, #b6c4d4);
+  background: transparent;
+  color: var(--color-primary, #1968f0);
+}
+.blip-addons-general .addons-action--dashed:hover { background: var(--color-surface-1, #e5e9ed); }
+.blip-addons-general .addons-form-actions--full > .addons-action,
+.blip-addons-general .addons-form-actions--equal > .addons-action {
+  flex: 1 1 0;
+  min-width: 0;
+}
 .blip-addons-general .addons-action:focus-visible,
-.blip-addons-general .addons-icon-action:focus-visible {
+.blip-addons-general .addons-icon-action:focus-visible,
+.blip-addons-general .addons-restore-action:focus-visible {
   outline: 2px solid var(--color-primary, #1968f0);
   outline-offset: 2px;
 }
@@ -106,7 +119,21 @@
   background: transparent;
   color: var(--color-content-default, #202c44);
 }
-.blip-addons-general .addons-reset-action { margin-left: auto; }
+.blip-addons-general .addons-restore-action {
+  flex: 0 0 40px;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-content-default, #202c44);
+}
+.blip-addons-general .addons-restore-action:hover {
+  color: var(--color-primary, #1968f0);
+  background: var(--color-surface-1, #e5e9ed);
+}
+.blip-addons-general .addons-restore-action bds-icon { display: block; }
 .blip-addons-general .addons-row-remove { align-self: center; font-size: 24px; font-weight: 400; }
 .blip-addons-general .addons-tracking-list { display: grid; gap: 10px; }
 .blip-addons-general .addons-empty-hint {
@@ -146,6 +173,19 @@
 .blip-addons-general .addons-tracking-row--single { grid-template-columns: minmax(0, 1fr) 40px; }
 .blip-addons-general .addons-tracking-row > div { min-width: 0; }
 .blip-addons-general .addons-rule-list { margin-top: 18px; }
+.blip-addons-general .addons-rule-summary {
+  padding: 14px;
+  border: 1px solid var(--color-border-1, #b6c4d4);
+  border-radius: 8px;
+  font-size: 13px;
+}
+.blip-addons-general .addons-rule-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.blip-addons-general .addons-rule-chips span {
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--color-primary, #1968f0);
+  background: var(--color-surface-1, #e5e9ed);
+}
 .blip-addons-general .addons-rule { padding: 14px 0; border-bottom: 1px solid var(--color-border-1, #b6c4d4); }
 .blip-addons-general .addons-rule:first-child { padding-top: 0; }
 .blip-addons-general .addons-rule-label {

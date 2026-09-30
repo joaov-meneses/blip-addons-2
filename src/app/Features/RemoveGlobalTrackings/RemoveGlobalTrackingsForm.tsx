@@ -157,13 +157,11 @@ export const RemoveGlobalTrackingsForm = (): JSX.Element => {
       <Block marginTop={2}>
         {getGlobalTrackingLine()}
 
-        <div className="addons-form-actions">
-          <button type="button" className="addons-action addons-action--secondary" onClick={addNewLine}>
-            {t('sidebar.removeGlobalTrackings.horizontalStack.buttonAdd')}
-          </button>
-        </div>
+        <button type="button" className="addons-action addons-action--dashed addons-add-row" onClick={addNewLine}>
+          {t('sidebar.removeGlobalTrackings.horizontalStack.buttonAdd')}
+        </button>
 
-        <div className="addons-form-actions">
+        <div className="addons-form-actions addons-form-actions--equal">
           <button type="button" className="addons-action addons-action--primary" onClick={handleSubmit}>
             {t('sidebar.removeGlobalTrackings.horizontalStack.buttonRemove')}
           </button>

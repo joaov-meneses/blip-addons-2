@@ -118,7 +118,7 @@
   "sidebar": {
     "fixActionNames": {
       "title": "Fix Action Names",
-      "description": "Estandarice los nombres de las acciones de todos los bloques del flujo abierto. Elija los tipos y personalice sus plantillas.",
+      "description": "Estandarice los nombres de las acciones de todos los bloques del flujo abierto.",
       "help": "Use {{campo}} para insertar un valor de la configuración de la acción. Ejemplo: Track \"{{category}}\". Solo cambian los nombres; los valores, condiciones y scripts se conservan.",
       "track": "Tracking · TrackEvent",
       "script": "Script · ExecuteScript / V2",
@@ -129,8 +129,10 @@
       "simplify": "Mostrar variables como {variable} en los nombres, como en el script original, en lugar de {{variable}}.",
       "preview": "Vista previa",
       "apply": "Aplicar",
-      "reset": "Restaurar plantillas",
-      "saved": "Las plantillas se guardan tras confirmar los cambios. Restaurar plantillas no deshace cambios en el flujo.",
+      "reset": "Restaurar valores predeterminados",
+      "saved": "Configure las plantillas en el popup. Restaurar valores predeterminados no deshace cambios ya hechos en el flujo.",
+      "typesActive": "tipos activos",
+      "configureInPopup": "Edite los tipos y las plantillas en Blip Addons 2.0 → Nombres de acciones. Aplicar cambia solo el flujo abierto, tras la confirmación.",
       "selectType": "Seleccione al menos un tipo de acción.",
       "emptyTemplate": "Complete las plantillas de los tipos seleccionados.",
       "unavailable": "No se pudo acceder al flujo. Espere a que el Builder termine de cargar e inténtelo de nuevo.",
@@ -146,6 +148,7 @@
     "title": "Blip Addons",
     "globalInactivity": {
       "title": "Añadir inactividad global",
+      "restore": "Restaurar valor predeterminado (eliminar inactividad global)",
       "paragraph1": {
         "text1": "Todos los bloques que esperan una entrada del usuario tendrán el límite de espera establecido en el valor de abajo.",
         "text2": "Aún tienes que publicar el flujo."
@@ -279,6 +282,31 @@
     }
   },
   "toastContainer": {
+    "popupNavigation": {
+      "home": "Vista general",
+      "homeDescription": "Configure las funciones de la extensión y personalice Builder.",
+      "navigation": "Navegación de la extensión",
+      "builder": "Builder",
+      "personalization": "Personalización",
+      "advanced": "Avanzado",
+      "integrations": "Integraciones de Builder",
+      "integrationsDescription": "Conozca los servicios disponibles en Nueva integración.",
+      "keywordsDescription": "Identifique entornos mediante palabras clave.",
+      "snippetsDescription": "Cree fragmentos de código reutilizables.",
+      "tagsDescription": "Personalice las etiquetas de los bloques.",
+      "devDescription": "Ajuste las funciones avanzadas de la extensión.",
+      "builderHint": "En Builder, abra Configuración general → Builder 2.0 para aplicar cambios al flujo.",
+      "version": "Versión",
+      "loading": "Cargando configuración…"
+    },
+    "actionNamesConfig": {
+      "title": "Nombres de acciones",
+      "description": "Seleccione tipos de acción y edite las plantillas que usa Fix Action Names.",
+      "availableFields": "Campos disponibles:",
+      "save": "Guardar plantillas",
+      "saved": "Plantillas guardadas. La pestaña Builder 2.0 ya puede usarlas.",
+      "restored": "Plantillas predeterminadas restauradas. Ningún flujo cambió."
+    },
     "modulesConfig": {
       "title": "Módulos del Builder",
       "description": "Elija los módulos que desea usar en el Builder.",

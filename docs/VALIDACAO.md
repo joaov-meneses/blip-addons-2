@@ -1,4 +1,19 @@
-# Validação do pacote 2.5.0
+# Validação dos pacotes 2.5.0 a 2.6.2
+
+## Versão 2.6.2
+
+O botão Reportar um problema foi retirado do menu lateral do popup. A versão permanece visível no rodapé.
+O ZIP em `instalacao/` contém uma pasta `dist` pronta para selecionar em **Carregar sem compactação**. O script de empacotamento confere `dist/manifest.json` e a quantidade de arquivos contra o build; esse ZIP é incluído no Git, enquanto `dist/` e `release/` continuam ignorados.
+
+## Versão 2.6.1
+
+As linhas de ações da Configuração das tags foram compactadas para 44 px, com texto e marcador de cor menores. Os demais acordeões mantêm seu espaçamento anterior. Build e testes automatizados aprovados; conferir visualmente no popup após recarregar a extensão.
+
+## Versão 2.6.0
+
+Build concluído e 19 testes automatizados aprovados. Os testes cobrem a navegação do popup, edição e persistência dos modelos de nomes, atualização das preferências no Builder, confirmação antes de aplicar ao fluxo, restauração de padrões sem mudar o bot e a estrutura dos botões de inatividade e trackings. O ZIP de instalação foi conferido com `manifest.json` na raiz e a mesma quantidade de arquivos do build. A validação visual da 2.6.0 no Chrome requer recarregar a extensão instalada e a aba da Blip.
+
+## Histórico da versão 2.5.0
 
 Resultado: **build concluído e 19 testes automatizados aprovados** com Node.js 22.20.0 e npm 11.6.1, no Windows. Base Addons 1.3.9, Fix Action Names, configuração dos módulos e aba nativa nas configurações gerais.
 

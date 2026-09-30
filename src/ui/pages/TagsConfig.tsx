@@ -79,11 +79,11 @@ export const TagsConfig = (): JSX.Element => {
   const getAccorionItems = (tagsSettings: Tag[]): JSX.Element[] => {
     const defaultTagsMapped = tagsSettings.map((tag: Tag, index: number) => {
       return (
-        <BlipAccordionItem borderTop={0} key={tag.name}>
+        <BlipAccordionItem borderTop={0} marginTop={0} marginBottom={0} key={tag.name}>
           <BlipAccordionHeader>
             <Flex className="justify-between" alignItems="center">
-              <BlipAccordionButton title={tag.name} />
-              <Circle width={20} height={20} backgroundColor={tag.color} />
+              <BlipAccordionButton title={tag.name} compact />
+              <Circle width={14} height={14} backgroundColor={tag.color} />
             </Flex>
           </BlipAccordionHeader>
           <BlipAccordionBody>
@@ -127,7 +127,7 @@ export const TagsConfig = (): JSX.Element => {
       </Flex>
 
       <Block marginTop={2} marginBottom={2}>
-        <Block width="100%">
+        <Block width="100%" className="addons-tags-list">
           <BlipAccordion>{getAccorionItems(tagsSettings)}</BlipAccordion>
         </Block>
 

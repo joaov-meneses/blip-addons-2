@@ -1,186 +1,139 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import * as React from 'react';
-import {
-  BdsButton,
-  BdsButtonIcon,
-  BdsIcon,
-  BdsTooltip,
-} from 'blip-ds/dist/blip-ds-react';
-
-import { Flex } from '@components/Flex';
-import { ISSUES_URL } from '~/Constants';
+import { BdsIcon } from 'blip-ds/dist/blip-ds-react';
 import { mergeSettings, setSettings, Settings } from '~/Settings';
-
+import { t } from 'src/i18n';
+import { LanguageSelect } from 'src/components/LanguageSelect';
 import { KeywordsConfig } from './pages/KeywordConfig';
 import { SnippetsConfig } from './pages/SnippetsConfig';
 import { TagsConfig } from './pages/TagsConfig';
 import { DevMode } from './pages/DevMode';
-import { t } from 'src/i18n';
-import { LanguageSelect } from 'src/components/LanguageSelect';
 import { IntegrationsInfo } from './pages/IntegrationsInfo';
 import { ModulesConfig } from './pages/ModulesConfig';
+import { ActionNamesConfig } from './pages/ActionNamesConfig';
 
-type Page =
-  | 'keywordConfig'
-  | 'snippetsConfig'
-  | 'tagConfig'
-  | 'DevMode'
-  | 'integrations'
-  | 'modules'
-  | 'home';
-
-const openIssue = (): void =>
-  chrome.tabs.create({
-    active: true,
-    url: ISSUES_URL,
-  });
+type Page = 'home' | 'modules' | 'actionNames' | 'integrations' | 'keywordConfig' |
+  'snippetsConfig' | 'tagConfig' | 'DevMode';
 
 export const App = (): JSX.Element => {
-  const [page, setPage] = React.useState('home' as Page);
+  const [page, setPage] = React.useState<Page>('home');
   const [language, setLanguage] = React.useState(Settings.language);
   const [ready, setReady] = React.useState(false);
 
-  const Pages = React.useMemo(
-    () => ({
-      keywordConfig: {
-        title: t('toastContainer.keywordConfig.title', language),
-        component: <KeywordsConfig />,
-        icon: 'filter',
-      },
-
-      snippetsConfig: {
-        title: t('toastContainer.snippetsConfig.title', language),
-        component: <SnippetsConfig />,
-        icon: 'file-java-script',
-      },
-
-      tagConfig: {
-        title: t('toastContainer.tagConfig.title', language),
-        component: <TagsConfig />,
-        icon: 'tag',
-      },
-
-      modules: {
-        title: t('toastContainer.modulesConfig.title', language),
-        component: <ModulesConfig />,
-        icon: 'settings-general',
-      },
-
-      DevMode: {
-        title: t('toastContainer.devModeConfig.title', language),
-        component: <DevMode />,
-        icon: 'notebook',
-      },
-      integrations: {
-        title: language === 'en' ? 'Builder integrations' : language === 'es' ? 'Integraciones del Builder' : 'Integrações do Builder',
-        component: <IntegrationsInfo />,
-        icon: 'plugin',
-      },
-    }),
-    [language]
-  );
-
-  const goTo = (page: Page) => () => setPage(page);
-
-  // Use effect para pegar primeiro carregamento
   React.useEffect(() => {
-    const handleSettingsUpdate = (event: MessageEvent) => {
-      if (event.data?.isSettingsUpdate && event.data?.newSettings?.language) {
-        setLanguage(event.data.newSettings.language);
-      }
-    };
-
-    window.addEventListener('message', handleSettingsUpdate);
-    return () => window.removeEventListener('message', handleSettingsUpdate);
-  }, []);
-
-  React.useEffect(() => {
-    chrome.storage.sync.get('settings', (result) => {
+    chrome.storage.sync.get('settings', result => {
       mergeSettings(result.settings);
       setLanguage(Settings.language);
       setReady(true);
     });
   }, []);
 
-  const handleLanguageChange = (e: any) => {
-    const languageByMenuSelect = e?.detail?.value || null;
-
-    const newLanguage = languageByMenuSelect ?? language;
-    if (!['ptbr', 'en', 'es'].includes(newLanguage) || newLanguage === Settings.language) return;
-
-    setSettings({ language: newLanguage });
-    setLanguage(newLanguage);
+  const pages: Record<Page, { title: string; description: string; icon: string; component?: JSX.Element }> = {
+    home: {
+      title: t('toastContainer.popupNavigation.home', language),
+      description: t('toastContainer.popupNavigation.homeDescription', language),
+      icon: 'home',
+    },
+    modules: {
+      title: t('toastContainer.modulesConfig.title', language),
+      description: t('toastContainer.modulesConfig.description', language),
+      icon: 'settings-general', component: <ModulesConfig />,
+    },
+    actionNames: {
+      title: t('toastContainer.actionNamesConfig.title', language),
+      description: t('toastContainer.actionNamesConfig.description', language),
+      icon: 'edit', component: <ActionNamesConfig />,
+    },
+    integrations: {
+      title: t('toastContainer.popupNavigation.integrations', language),
+      description: t('toastContainer.popupNavigation.integrationsDescription', language),
+      icon: 'plugin', component: <IntegrationsInfo />,
+    },
+    keywordConfig: {
+      title: t('toastContainer.keywordConfig.title', language),
+      description: t('toastContainer.popupNavigation.keywordsDescription', language),
+      icon: 'filter', component: <KeywordsConfig />,
+    },
+    snippetsConfig: {
+      title: t('toastContainer.snippetsConfig.title', language),
+      description: t('toastContainer.popupNavigation.snippetsDescription', language),
+      icon: 'file-java-script', component: <SnippetsConfig />,
+    },
+    tagConfig: {
+      title: t('toastContainer.tagConfig.title', language),
+      description: t('toastContainer.popupNavigation.tagsDescription', language),
+      icon: 'tag', component: <TagsConfig />,
+    },
+    DevMode: {
+      title: t('toastContainer.devModeConfig.title', language),
+      description: t('toastContainer.popupNavigation.devDescription', language),
+      icon: 'notebook', component: <DevMode />,
+    },
   };
 
-  if (!ready) return <p style={{ padding: 15 }}>Carregando configurações…</p>;
+  const handleLanguageChange = (event: any): void => {
+    const next = event?.detail?.value;
+    if (!['ptbr', 'en', 'es'].includes(next) || next === Settings.language) return;
+    setSettings({ language: next });
+    setLanguage(next);
+  };
 
-  if (page === 'home') {
-    return (
-      <div style={{ position: 'relative' }}>
-        <div style={{ padding: 15 }}>
-          <Flex alignItems="center" gap={8}>
-            <BdsIcon color="black" name="settings-general" />
-            <h2>{t('toastContainer.title', language).replace('Blip Addons', 'Blip Addons 2.0')}</h2>
-            <LanguageSelect
-              value={language}
-              onChange={handleLanguageChange}
-              style={{ marginLeft: 'auto' }}
-            />
-          </Flex>
-          <div style={{ width: '80%', textAlign: 'left' }}>
-            <h3>{t('toastContainer.sectionResource', language)}</h3>
+  if (!ready) return <p className="addons-loading">{t('toastContainer.popupNavigation.loading', language)}</p>;
 
-            {Object.keys(Pages).map((page, i) => (
-              <div key={i} style={{ marginBottom: 5 }}>
-                <BdsButton
-                  icon={Pages[page].icon}
-                  variant="secondary"
-                  onClick={goTo(page as keyof typeof Pages)}
-                >
-                  {Pages[page].title}
-                </BdsButton>
-              </div>
-            ))}
+  const navGroups: Array<{ title: string; pages: Page[] }> = [
+    { title: t('toastContainer.popupNavigation.builder', language), pages: ['modules', 'actionNames', 'integrations'] },
+    { title: t('toastContainer.popupNavigation.personalization', language), pages: ['keywordConfig', 'snippetsConfig', 'tagConfig'] },
+    { title: t('toastContainer.popupNavigation.advanced', language), pages: ['DevMode'] },
+  ];
 
-            <h3>{t('toastContainer.sectionExternalAddress', language)}</h3>
-
-            <BdsButton icon="warning" variant="secondary" onClick={openIssue}>
-              {t('toastContainer.reportIssue', language)}
-            </BdsButton>
-            <p className="addons-note">Blip Addons 1.3.9 + Better Blip Builder 3.0.46 · pacote 2.5.1</p>
-          </div>
+  return <div className="addons-popup-shell">
+    <header className="addons-popup-topbar">
+      <div className="addons-popup-brand">
+        <img src="icons/icon48.png" width="32" height="32" alt="" />
+        <span>Blip Addons <strong>2.0</strong></span>
+      </div>
+      <LanguageSelect value={language} onChange={handleLanguageChange} />
+    </header>
+    <div className="addons-popup-layout">
+      <aside className="addons-popup-sidebar">
+        <nav aria-label={t('toastContainer.popupNavigation.navigation', language)}>
+          <button type="button" className={`addons-popup-nav-button ${page === 'home' ? 'active' : ''}`}
+            aria-current={page === 'home' ? 'page' : undefined} onClick={() => setPage('home')}>
+            <BdsIcon name={pages.home.icon} size="small" theme="outline" />{pages.home.title}
+          </button>
+          {navGroups.map(group => <div key={group.title} className="addons-popup-nav-group">
+            <span className="addons-popup-nav-label">{group.title}</span>
+            {group.pages.map(key => <button key={key} type="button"
+              className={`addons-popup-nav-button ${page === key ? 'active' : ''}`}
+              aria-current={page === key ? 'page' : undefined} onClick={() => setPage(key)}>
+              <BdsIcon name={pages[key].icon} size="small" theme="outline" />{pages[key].title}
+            </button>)}
+          </div>)}
+        </nav>
+        <div className="addons-popup-sidebar-footer">
+          <small>{t('toastContainer.popupNavigation.version', language)} 2.6.2</small>
         </div>
-      </div>
-    );
-  }
-
-  const currentPage = Pages[page];
-
-  return (
-    <div style={{ position: 'relative', padding: 15 }}>
-      <div
-        className="toast-container"
-        style={{
-          position: 'absolute',
-        }}
-      ></div>
-
-      <Flex alignItems="center" gap={5}>
-        <BdsTooltip position="right-center" tooltipText="Voltar">
-          <BdsButtonIcon
-            size="short"
-            onClick={goTo('home')}
-            variant="secondary"
-            icon="arrow-left"
-          />
-        </BdsTooltip>
-
-        <h2>{currentPage.title}</h2>
-      </Flex>
-
-      <div style={{ width: '80%', margin: '0 auto' }}>
-        {currentPage.component}
-      </div>
+      </aside>
+      <main className="addons-popup-main" id="addons-popup-main">
+        <div className="toast-container" />
+        <header className="addons-popup-page-header">
+          <div className="addons-popup-page-icon"><BdsIcon name={pages[page].icon} size="medium" theme="outline" /></div>
+          <div>
+            <h1>{pages[page].title}</h1>
+            <p>{pages[page].description}</p>
+          </div>
+        </header>
+        {page === 'home' ? <div className="addons-popup-home">
+          <div className="addons-popup-feature-grid">
+            {(['modules', 'actionNames', 'keywordConfig', 'snippetsConfig'] as Page[]).map(key =>
+              <button key={key} type="button" className="addons-popup-feature-card" onClick={() => setPage(key)}>
+                <BdsIcon name={pages[key].icon} size="medium" theme="outline" />
+                <strong>{pages[key].title}</strong>
+                <span>{pages[key].description}</span>
+              </button>)}
+          </div>
+          <p className="addons-popup-home-note">{t('toastContainer.popupNavigation.builderHint', language)}</p>
+        </div> : <div className="addons-popup-page-content">{pages[page].component}</div>}
+      </main>
     </div>
-  );
+  </div>;
 };
