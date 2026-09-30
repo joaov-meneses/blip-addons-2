@@ -1,0 +1,175 @@
+.blip-addons-general {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 24px 32px;
+  color: var(--color-content-default, #202c44);
+  background: var(--color-surface-2, #fff);
+  font-family: inherit;
+}
+.blip-addons-general .addons-general-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 5px;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.blip-addons-general .addons-general-section { margin: 0; padding: 0; }
+.blip-addons-general .addons-general-header:focus-visible {
+  outline: 2px solid var(--color-primary, #1968f0);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.blip-addons-general .addons-general-header bds-icon { flex: 0 0 16px; margin-top: 3px; }
+.blip-addons-general .addons-general-header bds-typo { text-transform: uppercase; }
+.blip-addons-general .addons-general-divider { height: 1px; margin: 20px 0; background: var(--color-surface-1, #e5e9ed); }
+.blip-addons-general .addons-general-body { margin-top: 12px; padding-bottom: 8px; }
+.blip-addons-general [hidden] { display: none !important; }
+.blip-addons-general p,
+.blip-addons-general li,
+.blip-addons-general .bp-c-city { color: var(--color-content-default, #202c44) !important; }
+.blip-addons-general p { font-size: 14px; line-height: 1.6; }
+.blip-addons-general input[type="checkbox"] { accent-color: var(--color-primary, #1968f0); }
+.blip-addons-general bds-input { display: block; width: 100%; min-width: 0; }
+.blip-addons-general bds-button { max-width: 100%; }
+.blip-addons-general .relative { min-width: 0; }
+.blip-addons-general .addons-general-body > div { min-width: 0; }
+.blip-addons-general [role="alert"] { color: var(--color-error, #c22637) !important; }
+
+.blip-addons-general .addons-general-body > div > p:first-child { margin-top: 0; }
+.blip-addons-general .addons-general-body p { margin-bottom: 12px; }
+.blip-addons-general .addons-form-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  min-height: 34px;
+}
+.blip-addons-general .addons-form-option bds-switch { flex: 0 0 auto; }
+.blip-addons-general .addons-form-option bds-typo { flex: 1; min-width: 0; line-height: 1.45; }
+.blip-addons-general .addons-form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.blip-addons-general .addons-form-actions > :last-child:not(:first-child) { margin-left: auto; }
+.blip-addons-general .addons-action,
+.blip-addons-general .addons-icon-action {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.blip-addons-general .addons-action { padding: 0 16px; white-space: normal; text-align: center; }
+.blip-addons-general .addons-action--primary {
+  background: var(--color-primary, #1968f0);
+  color: #fff;
+}
+.blip-addons-general .addons-action--primary:hover { filter: brightness(1.1); }
+.blip-addons-general .addons-action--secondary {
+  background: transparent;
+  border-color: var(--color-primary, #1968f0);
+  color: var(--color-primary, #1968f0);
+}
+.blip-addons-general .addons-action--secondary:hover,
+.blip-addons-general .addons-icon-action:hover { background: var(--color-surface-1, #e5e9ed); }
+.blip-addons-general .addons-action:focus-visible,
+.blip-addons-general .addons-icon-action:focus-visible {
+  outline: 2px solid var(--color-primary, #1968f0);
+  outline-offset: 2px;
+}
+.blip-addons-general .addons-icon-action {
+  flex: 0 0 40px;
+  min-width: 40px !important;
+  max-width: 40px;
+  width: 40px;
+  padding: 0;
+  border-color: var(--color-border-1, #b6c4d4);
+  background: transparent;
+  color: var(--color-content-default, #202c44);
+}
+.blip-addons-general .addons-reset-action { margin-left: auto; }
+.blip-addons-general .addons-row-remove { align-self: center; font-size: 24px; font-weight: 400; }
+.blip-addons-general .addons-tracking-list { display: grid; gap: 10px; }
+.blip-addons-general .addons-empty-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--color-border-1, #b6c4d4);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.blip-addons-general .addons-empty-hint::before {
+  content: 'i';
+  display: inline-flex;
+  flex: 0 0 18px;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  border: 1px solid var(--color-primary, #1968f0);
+  border-radius: 50%;
+  color: var(--color-primary, #1968f0);
+  font-size: 12px;
+  font-weight: 700;
+}
+.blip-addons-general .addons-tracking-row {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--color-border-1, #b6c4d4);
+  border-radius: 8px;
+}
+.blip-addons-general .addons-tracking-row--single { grid-template-columns: minmax(0, 1fr) 40px; }
+.blip-addons-general .addons-tracking-row > div { min-width: 0; }
+.blip-addons-general .addons-rule-list { margin-top: 18px; }
+.blip-addons-general .addons-rule { padding: 14px 0; border-bottom: 1px solid var(--color-border-1, #b6c4d4); }
+.blip-addons-general .addons-rule:first-child { padding-top: 0; }
+.blip-addons-general .addons-rule-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.blip-addons-general .addons-rule-label input { flex: 0 0 auto; margin: 4px 0 0; }
+.blip-addons-general .addons-form-option--checkbox { margin-top: 18px; }
+.blip-addons-general .addons-form-option--checkbox .addons-rule-label { margin-bottom: 0; }
+.blip-addons-general .addons-form-note { margin-top: 12px; opacity: .78; }
+.blip-addons-general .addons-form-note p { margin: 0; font-size: 12px; }
+.blip-addons-general [id$="fix-action-names-result"] {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid var(--color-border-1, #b6c4d4);
+  border-radius: 8px;
+}
+@media (max-width: 410px) {
+  .blip-addons-general .addons-tracking-row { grid-template-columns: minmax(0, 1fr) 40px; }
+  .blip-addons-general .addons-tracking-row:not(.addons-tracking-row--single) > div:nth-child(2) { grid-column: 1; }
+  .blip-addons-general .addons-tracking-row:not(.addons-tracking-row--single) > .addons-row-remove { grid-column: 2; grid-row: 1 / 3; }
+}

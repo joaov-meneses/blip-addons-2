@@ -1,0 +1,51 @@
+{
+  "name": "blip-addons-2",
+  "version": "2.5.1",
+  "description": "Blip Addons 2.0 — utilitários e integrações para o Blip Builder",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "package": "npm run build && npm test && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@svgr/webpack": "^6.2.1",
+    "@types/chrome": "0.0.75",
+    "@types/constant-case": "^1.1.2",
+    "@types/react": "^16.7.8",
+    "@types/react-dom": "^16.0.11",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.10.0",
+    "eslint-plugin-react": "^7.29.2",
+    "husky": "^7.0.4",
+    "jsdom": "^26.1.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^5.3.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "^3.1.6",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "blip-ds": "^1.135.2",
+    "constant-case": "^3.0.4",
+    "dot-prop": "6.0.1",
+    "esbuild-loader": "^2.18.0",
+    "framer-motion": "^6.2.8",
+    "p-throttle": "^4.1.1",
+    "react": "^17.0.2",
+    "react-color": "^2.19.3",
+    "react-dom": "^17.0.2",
+    "uuid": "^8.3.2"
+  },
+  "private": true
+}

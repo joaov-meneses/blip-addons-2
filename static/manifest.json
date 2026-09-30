@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Blip Addons 2.0",
+  "version": "2.5.1",
+  "description": "Integrações do Better Blip Builder e utilitários do Blip Addons em uma única extensão.",
+  "icons": { "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": { "default_title": "Blip Addons 2.0", "default_popup": "popup.html" },
+  "permissions": ["storage"],
+  "host_permissions": ["*://*.blip.ai/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.blip.ai/*"],
+      "js": ["js/integration-controls.js"],
+      "css": ["module-controls.css"],
+      "all_frames": true,
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.blip.ai/*"],
+      "js": ["blip-builder.js"],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://*.blip.ai/*"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["*://*.blip.ai/*"],
+      "resources": ["inject.js", "assets/inject.css", "assets/CascadiaMono.ttf", "js/listener.js"]
+    }
+  ]
+}

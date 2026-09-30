@@ -1,0 +1,3 @@
+html:not([data-blip-addons-new-integration="enabled"]) [data-ww-integration-button-mounted="true"] > div > bds-button[icon="plugin"] {
+  display: none !important;
+}

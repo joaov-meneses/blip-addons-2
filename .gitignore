@@ -1,0 +1,6 @@
+node_modules/
+dist/
+release/
+analysis/*.readable.js
+tests/.generated/
+*.log

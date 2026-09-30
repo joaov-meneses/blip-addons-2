@@ -1,0 +1,372 @@
+{
+  "home": {
+    "filter": {
+      "title": "Filtrar por ambiente",
+      "option1": "Todos",
+      "option2": "Produção (PRD)",
+      "option3": "Homologação (HMG)",
+      "option4": "Beta (BETA)",
+      "option5": "Desenvolvimento (DEV)"
+    }
+  },
+  "contractViewer": {
+    "title": "Filtre entre os contratos"
+  },
+  "checkInconsistencies": {
+    "loopsAndMaxBlocks": {
+      "getLoopMessage": {
+        "title": "Loops no fluxo",
+        "paragraph1": "Foi encontrado o seguinte Loop no fluxo:",
+        "paragraph2Pt1": "* Você deve alterar as condições de saída de algum destes blocos para evitar o possível loop.",
+        "paragraph2Pt2": "* Lembre de verificar a condição de saída padrão dos blocos."
+      },
+      "getMaxBlocksMessage": {
+        "title": "Loops no Fluxo",
+        "paragraph1": "Foi encontrado a seguinte cascata de blocos sem input do usuário no fluxo:",
+        "paragraph2": "* Você deve remover blocos nesta cascata ou adicionar uma espera por input do usuário. Não pode existir uma cascata com mais de 35 blocos sem input do usuário."
+      },
+      "getSuccessMessage": {
+        "title": "Sem loops no fluxo",
+        "paragraph1": "Nenhum loop foi encontrado no fluxo."
+      },
+      "trackings": {
+        "getTrackingMessage": {
+          "paragraph1": "Nenhuma tracking com ação potencialmente nula identificada"
+        },
+        "getTrackingsErrorMessage": {
+          "paragraph1part1": "* Você deve alterar as condições de execução de trackings destes blocos para evitar o possíveis erros.",
+          "paragraph1part2": "Você pode arrumar esses fluxos automaticamente apertando no botão abaixo.",
+          "buttonTtitle": "Corrigir trackings"
+        }
+      }
+    }
+  },
+  "flowComments": {
+    "addCommentsOfBlocks": {
+      "buttonLabel": "Comentários"
+    },
+    "addCommentsSideBar": {
+      "createComment": {
+        "successToast": "Comentário salvo com sucesso!"
+      },
+      "handleRemoveComment": {
+        "headerMessage": "Você confirma que deseja deletar este comentário?",
+        "mainMessage": "Este comentário será deletado de todos os blocos que ele foi criado."
+      },
+      "removeComment": {
+        "toastSuccess": "Comentário removido com sucesso."
+      },
+      "editComment": {
+        "toastSuccess": "Comentário salvo com sucesso!",
+        "toastDanger": "Falha ao atualizar comentário! Tente novamente."
+      },
+      "body": {
+        "inputValue": "Editor de comentários",
+        "paragraphComment": "Comentário",
+        "addCommentButton": "Adicionar comentário",
+        "addCommentParagraphPart1": "Insira o seu comentário abaixo.",
+        "addCommentParagraphPart2": "O comentário deve conter apenas texto.",
+        "addCommentLabel": "Insira o seu comentário",
+        "saveCommentButton": "Salvar"
+      }
+    },
+    "flowCommentsSideBar": {
+      "flowCommentsButton": "Comentários",
+      "emptyCommentsElement": {
+        "title": "Ainda não há comentários no fluxo",
+        "paragraphPart1": "Você ainda não adicionou nenhum comentário. Faça isso clicando com o botão direito do mouse em algum bloco e selecionando a opção",
+        "paragraphPart2": "Comentários"
+      },
+      "handleRemoveComment": {
+        "headerMessage": "Você confirma que deseja deletar este comentário?",
+        "mainMessage": "Este comentário será deletado de todos os blocos que ele foi criado."
+      },
+      "removeComment": {
+        "successToast": "Comentário removido com sucesso!"
+      },
+      "editComment": {
+        "successToast": "Comentário salvo com sucesso!",
+        "dangerToast": "Falha ao atualizar comentário! Tente novamente."
+      },
+      "body": {
+        "input": "Comentários",
+        "paragraph": "Comentário"
+      }
+    },
+    "removeInactivity": {
+      "successToast": "bloco(s) alterado(s)",
+      "warningToast": "Nenhum bloco alterado"
+    }
+  },
+  "replaceVariable": {
+    "handleSubmit": {
+      "setError1": "Preencha com um nome de variável válida no Blip",
+      "setError2": "Preencha com um nome de variável válida no Blip",
+      "successToast1": "Variável alterada com sucesso!",
+      "successToast2": "Falha ao alterar o nome da variável!"
+    },
+    "body": {
+      "input1": "Nome atual da variável",
+      "paragraph1": "Insira o novo nome da variável",
+      "input2": "Novo nome da variável",
+      "button": "Renomear",
+      "paragraph2Part1": "* Altera ",
+      "paragraph2Part2": "TODAS",
+      "paragraph2Part3": "as ocorrências dessa variável no fluxo e renomeia para."
+    }
+  },
+  "sidebar": {
+    "fixActionNames": {
+      "title": "Fix Action Names",
+      "description": "Padronize os nomes das ações de todos os blocos do fluxo aberto. Escolha os tipos e personalize seus modelos.",
+      "help": "Use {{campo}} para inserir um valor da configuração da ação. Exemplo: Track \"{{category}}\". Os nomes são alterados; valores, condições e scripts permanecem iguais.",
+      "track": "Tracking · TrackEvent",
+      "script": "Script · ExecuteScript / V2",
+      "http": "Requisição HTTP · ProcessHttp",
+      "command": "Comando · ProcessCommand",
+      "variable": "Variável · SetVariable",
+      "template": "Modelo do nome",
+      "simplify": "Exibir variáveis como {variavel} nos nomes, como no script original, em vez de {{variavel}}.",
+      "preview": "Visualizar prévia",
+      "apply": "Aplicar",
+      "reset": "Restaurar modelos",
+      "saved": "Os modelos são salvos após confirmar a aplicação. Restaurar modelos não desfaz alterações no fluxo.",
+      "selectType": "Selecione pelo menos um tipo de ação.",
+      "emptyTemplate": "Preencha os modelos dos tipos selecionados.",
+      "unavailable": "Não foi possível acessar o fluxo. Aguarde o Builder terminar de carregar e tente novamente.",
+      "applied": "ação(ões) renomeada(s).",
+      "pending": "ação(ões) a renomear.",
+      "unchanged": "já no padrão",
+      "skipped": "ignorada(s)",
+      "sample": "Antes → depois (até 10 alterações):",
+      "untitled": "Sem nome",
+      "missing": "Os nomes destas ações foram preservados porque algum campo do modelo está ausente ou não é texto, número ou booleano (até 5 exemplos):",
+      "saveFlow": "Alterações aplicadas ao fluxo aberto. Use os comandos normais de salvar/publicar do Builder quando terminar sua revisão."
+    },
+    "title": "Blip Addons",
+    "globalInactivity": {
+      "title": "Adicionar inatividade global",
+      "paragraph1": {
+        "text1": "Todos os blocos que esperam por uma entrada do usuário terão seu limite de espera setados para o valor abaixo.",
+        "text2": "Você ainda precisa publicar o fluxo."
+      },
+      "input": {
+        "label": "Limite de espera (em minutos)"
+      },
+      "switch": {
+        "label": "Manter limite de espera se já estiver definido"
+      },
+      "horizontalStack": {
+        "buttonSubmit": "Definir",
+        "buttonRemove": "Remover*"
+      },
+      "paragraph2": {
+        "text1": "* Remove o limite de espera de",
+        "text2": "TODOS",
+        "text3": "os inputs."
+      },
+      "validation": {
+        "required": "Preencha com um valor entre 1 e 1380",
+        "invalid": "Utilize números entre 1 e 1380"
+      },
+      "toast": {
+        "successToast": "bloco(s) alterado(s)",
+        "warningToast": "Nenhum bloco foi alterado"
+      }
+    },
+    "setGlobalTrackings": {
+      "title": "Adicionar trackings globais",
+      "paragraph1": {
+        "text1": "Todos os blocos que contêm a ação de tracking terão adição de trackings globais.",
+        "text2": "Você ainda precisa publicar o fluxo"
+      },
+      "switch": {
+        "label": "Apagar trackings globais definidas"
+      },
+      "horizontalStack": {
+        "buttonAdd": "Adicionar",
+        "buttonDefine": "Definir"
+      },
+      "validation": {
+        "required": "Ainda não há trackings",
+        "invalid": "Você ainda não adicionou nenhuma tracking"
+      },
+      "toast": {
+        "successToast": "bloco(s) alterado(s)",
+        "warningToast": "Nenhum bloco alterado"
+      },
+      "error": {
+        "message": "Preencha todos os campos"
+      }
+    },
+    "removeGlobalTrackings": {
+      "title": "Remover trackings globais",
+      "paragraph1": {
+        "text1": "Todos os blocos terão as tracking especificadas removidas das ações de registro.",
+        "text2": "Você ainda precisa publicar o fluxo"
+      },
+      "horizontalStack": {
+        "buttonAdd": "Adicionar",
+        "buttonRemove": "Remover",
+        "buttonRemoveAll": "Remover Todas *"
+      },
+      "paragraph2": {
+        "text1": "* Remove as trackings globais de",
+        "text2": "TODAS",
+        "text3": "as actions."
+      },
+      "validation": {
+        "required": "Ainda não há trackings",
+        "invalid": "Você ainda não adicionou nenhuma tracking"
+      },
+      "toast": {
+        "successToast": "bloco(s) alterado(s)",
+        "warningToast": "Nenhum bloco alterado"
+      },
+      "confirmationAlert": {
+        "headerMessage": "Atenção",
+        "mainMessage": "Você tem certeza que gostaria de executar esta ação? Isso irá alterar o fluxo definitivamente.",
+        "buttonCancel": "Cancelar",
+        "buttonConfirm": "Confirmar"
+      }
+    },
+    "editBlockOption": {
+      "typoValue": "Editar"
+    },
+    "checkInconsistencies": {
+      "title": "Verificar inconsistências no fluxo",
+      "paragraph1": {
+        "text1": "Este recurso irá procurar por"
+      },
+      "list": {
+        "item1": "Registros de eventos que podem ter a action vazia",
+        "item2": "Loops no fluxo",
+        "item3Part1": "Cascata de blocos com mais de",
+        "item3Part2": "blocos sem entrada do usuário",
+        "item4": "Condições de saída de blocos ou de execução de ações com tautologias"
+      },
+      "switch": {
+        "label1": "Verificar a existência de loops",
+        "label2": "Verificar trackings potencialmente nulas",
+        "label3": "Verificar tautologias"
+      },
+      "button": {
+        "label": "Verificar"
+      },
+      "toast": {
+        "successToast": "Não foi encontrada nenhuma inconsistência no fluxo.",
+        "warningToast": "Foi encontrada alguma inconsistência no fluxo."
+      }
+    },
+    "botStatistics": {
+      "title": "Estatísticas do Bot",
+      "list": {
+        "item1": "Quantidade de blocos:",
+        "item2": "Quantidade de actions por tipo:",
+        "item3": "Chamadas http:",
+        "item4": "Trackings únicas:",
+        "item5": "Scripts:"
+      }
+    },
+    "qualityChecker": {
+      "title": "Quality Checker",
+      "button": {
+        "label": "Executar checagens automaticas"
+      }
+    },
+    "renameVariable": {
+      "title": "Renomear variável"
+    }
+  },
+  "toastContainer": {
+    "modulesConfig": {
+      "title": "Módulos do Builder",
+      "description": "Escolha os módulos que você deseja usar no Builder.",
+      "sidebar": "Aba Builder 2.0",
+      "builder": "Criação de blocos",
+      "newIntegration": "Nova integração",
+      "integrationHelp": "Controla o botão Nova integração. As integrações já existentes no fluxo continuam disponíveis para edição.",
+      "saved": "As alterações são salvas automaticamente e aplicadas às abas abertas da Blip.",
+      "empty": "Nenhum módulo está habilitado. Abra o popup da extensão → Módulos do Builder para escolher quais usar."
+    },
+    "title": "Configurações do Blip Addons",
+    "sectionResource": "Recursos",
+    "keywordConfig": {
+      "title": "Configuração de palavra-chave",
+      "input1": "Palavres chaves da PRODUÇÃO",
+      "input2": "Palavres chaves de HOMOLOGAÇÃO",
+      "input3": "Palavres chaves de BETA",
+      "input4": "Palavres chaves de DESENVOLVIMENTO",
+      "label": "* Recarregue as páginas do builder abertas para carregar os novos ajustes.",
+      "saveButton": "Salvar",
+      "toast": {
+        "toastText": "Dados salvo com sucesso",
+        "toastTitle": "Sucesso novo toast!"
+      }
+    },
+    "snippetsConfig": {
+      "title": "Configuração dos snippets",
+      "text1": "Adicione aqui os seus snippets personalizados!",
+      "boxHelper": "Você ainda não adicionou nenhum Snippet",
+      "label": "* Recarregue as páginas do builder abertas para carregar os novos snippets.",
+      "addSnippetButton": "Add Snippet",
+      "saveButton": "Salvar",
+      "AddSnippetBox": {
+        "text1": "Adicione aqui os seus snippets personalizados!",
+        "newSnippetTitle": "Novo Snippet",
+        "input1": "Nome do Snippet",
+        "input2": "Código a ser gerado",
+        "label": "* Recarregue as páginas do builder abertas para carregar os novos snippets."
+      },
+      "toast": {
+        "toastTextError": "Todos os snippets devem ter um conteúdo não vazio",
+        "toastTitleError": "Falha ao salvar os Snippets!",
+        "toastTextSuccess": "Dados atualizados com sucesso",
+        "toastTitleSuccess": "Sucesso!",
+        "toastTextRemoved": "Snippet removido com sucesso",
+        "toastTitleRemoved": "Sucesso!",
+        "toastTextDuplicated": "Não podem haver 2 snippets com o mesmo nome",
+        "toastTitleDuplicated": "Falha ao salvar os Snippets!"
+      }
+    },
+    "tagConfig": {
+      "title": "Configuração das tags",
+      "text1": "Modifique as suas tags e torne elas únicas!",
+      "switch1": "Habilitar auto tag.",
+      "enable": "Habilitar",
+      "saveButton": "Salvar",
+      "restoreButton": "Voltar ao padrão",
+      "toast": {
+        "toastTextUpdated": "Tags atualizadas com sucesso",
+        "toastTitleUpdated": "Sucesso!",
+        "toastTextRestored": "Tags restauradas ao padrão com sucesso",
+        "toastTitleRestored": "Sucesso!"
+      }
+    },
+    "devModeConfig": {
+      "title": "Configurações DEV mode",
+      "text1": "Otimizações BLIP",
+      "home": {
+        "switch1": "Mostrar apenas routers na home(Também seta página para 120).",
+        "switch2": "Pinta os routers com as cores respectivas do filtro de ambiente."
+      },
+      "beholder": {
+        "switch1": "Corrige espaçamento da direita quando abre o chat de teste no beholder."
+      },
+      "cleanup": {
+        "switch1": "Limpa header de opções.",
+        "switch2": "Tira as dicas para ações e condições de saída.",
+        "switch3": "Esconde livraria de funções."
+      }
+    },
+    "sectionExternalAddress": "Endereços externos",
+    "reportIssue": "Reportar um problema",
+    "sectionSelectLanguage": "Selecionar idioma"
+  },
+  "modal": {
+    "button": "Fechar"
+  },
+  "editBlockOption": {
+    "typoValue": "Editar"
+  }
+}

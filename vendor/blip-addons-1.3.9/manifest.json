@@ -1,0 +1,33 @@
+{
+   "action": {
+      "default_popup": "popup.html",
+      "default_title": "Blip Addons"
+   },
+   "background": {
+      "service_worker": "js/background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "js/content.js" ],
+      "matches": [ "*://*.blip.ai/application/*" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "Collection of Blip utilities",
+   "homepage_url": "https://github.com/pmartinsesa/blip-addons",
+   "host_permissions": [ "*://*.blip.ai/application/*" ],
+   "icons": {
+      "128": "icons/icon128.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv8cziHlVRxWebYcic7NV5qzZ6jdGCAagLqbVdP0yL4vghTuGRxWYHqZDb9wgwxuJPO1EDITHmwTbYGayFPBje898GP4ZyuA7Y4LNac/oOyYH2Hgoj/Ly9BxPudCNHDfM0VcS19Lk74zjKj/9Jj2x1iFcMlgFgKTjbrDYG/rEJoX/DQPAJEbiaKCvzggYsX/fYVqJUZtvWhWII9ROl8Zh+kDxFRF0gJmaaWMvsQ5X9ZlG1bVFXvNe90Thu/kO+Hk9EZ8RBU4pwizz6ix0KUu/sAOyoyC9hgi3FqmsMRpP13XglHCxaOK/gdm0+wjJRxneXdXceDHJwVdln/7MAed3TwIDAQAB",
+   "manifest_version": 3,
+   "name": "Blip Addons",
+   "permissions": [ "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.9",
+   "web_accessible_resources": [ {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "resources": [ "js/listener.js" ]
+   } ]
+}

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "lib": ["es2019", "dom"],
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "@features/*": ["src/app/Features/*"],
+      "@commands/*": ["src/app/Commands/*"],
+      "@components/*": ["src/app/Components/*"],
+      "@components": ["src/app/Components/index.ts"],
+      "~/*": ["src/app/*"]
+    }
+  },
+  "exclude": ["node_modules", "vendor", "analysis"]
+}

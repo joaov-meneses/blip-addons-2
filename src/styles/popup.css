@@ -1,0 +1,15 @@
+body {
+  width: 600px;
+  min-height: 550px;
+  margin: 0;
+  color: #182d40;
+  background: white;
+  font: 14px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+h2 { font-size: 20px; }
+.addons-integrations { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+.addons-integrations span { padding: 3px 8px; font-size: 11px; border-radius: 5px; background: #edf4f8; color: #235270; }
+.addons-note { font-size: 12px; color: #546b7e; margin-top: 20px; }
+.addons-module-option { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #edf1f5; }
+.toast-container { position: fixed; top: 8px; left: 8px; z-index: 10000; }

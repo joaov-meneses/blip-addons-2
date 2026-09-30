@@ -1,0 +1,11 @@
+{
+  "extensionId": "gindjfmlebfgccocnjfeobedgeglpoeb",
+  "version": "1.3.9",
+  "method": "sourcesContent from inline source maps in installed bundles",
+  "hashes": {
+    "js/content.js": "1faaa25fa03fbf2e89da2a025c28cf847f8a1de54341c027dabfcf9a42e6292d",
+    "js/listener.js": "83d4e26d4fb0f3e759ed4cba1d876125d27d8d7035f3cf26b7069ddcf7f3dfea",
+    "js/popup.js": "c9bf61448d3178fb2d2c3107e0b323663f0435b0fda2dc007a067af79ac1678f"
+  },
+  "recoveredFiles": 122
+}

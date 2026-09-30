@@ -1,0 +1,33 @@
+{
+   "$schema": "https://www.schemastore.org/chrome-manifest.json",
+   "action": {
+      "default_icon": {
+         "16": "icon.png",
+         "32": "icon-32px.png"
+      },
+      "default_popup": "./popup.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "./blip-builder.js" ],
+      "matches": [ "*://*.blip.ai/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Add new features to Blip Builder",
+   "host_permissions": [ "*://*.blip.ai/*" ],
+   "icons": {
+      "128": "icon-128px.png",
+      "16": "icon.png",
+      "48": "icon-48px.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAksirhedtWgvxnRT/8x6JSHQMJpr492k85wYl+7Tm9n9CdwYKFVHVJURIa+XCEX0bVw4FBJlkA8RpwxPn7eUNlxalYy7jNgjp9NhmyqTZBBSwBwbdYZo8fWGt0nrd9x9xdKKOXgKjG+7+CCw6yGqexrN0mbW8CIg+PR8UhNieNOllAVzJJnR82VAFpNHSGHqiVvVswlp+QpPWdhuAjIkiyGDe4QuOT2rygAdy+vXqjZdZEWkQIyKl6/YPlDTvQKBxf0VY1rXeg/dtV8NTeOzOOPHM3lsaXjexh1RIg2/Fs62i6jT/ywc1G2tEm7OQheEKGBRtWQA5qxKa21tPoOyHCQIDAQAB",
+   "manifest_version": 3,
+   "name": "Better Blip Builder",
+   "permissions": [  ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.0.46",
+   "web_accessible_resources": [ {
+      "matches": [ "*://*.blip.ai/*" ],
+      "resources": [ "assets/inject.css", "assets/CascadiaMono.ttf", "inject.js" ]
+   } ]
+}

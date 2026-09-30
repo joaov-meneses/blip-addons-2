@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Cascadia Code";
+    src: url("CascadiaMono.ttf");
+}
+
+#monaco-editor-container * {
+    font-family: "Cascadia Code" !important;
+}
+
+monaco-editor {
+    height: 92% !important;
+}

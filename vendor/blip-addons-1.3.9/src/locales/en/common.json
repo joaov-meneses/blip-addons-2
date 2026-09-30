@@ -1,0 +1,335 @@
+{
+  "home": {
+    "filter": {
+      "title": "Filter by environment",
+      "option1": "All",
+      "option2": "Production (PRD)",
+      "option3": "Homologation (HMG)",
+      "option4": "Beta (BETA)",
+      "option5": "Development (DEV)"
+    }
+  },
+  "contractViewer": {
+    "title": "Filter between contracts"
+  },
+  "checkInconsistencies": {
+    "loopsAndMaxBlocks": {
+      "getLoopMessage": {
+        "title": "Loops in the flow",
+        "paragraph1": "The following loop was found in the flow:",
+        "paragraph2Pt1": "* You must change the exit conditions of some of these blocks to avoid the possible loop.",
+        "paragraph2Pt2": "* Remember to check the default exit condition of the blocks."
+      },
+      "getMaxBlocksMessage": {
+        "title": "Loops in the flow",
+        "paragraph1": "The following cascade of blocks without user input was found in the flow:",
+        "paragraph2": "* You must remove blocks in this cascade or add a wait for user input. There cannot be a cascade with more than 35 blocks without user input."
+      },
+      "getSuccessMessage": {
+        "title": "No loops in the flow",
+        "paragraph1": "No loops were found in the flow."
+      },
+      "trackings": {
+        "getTrackingMessage": {
+          "paragraph1": "No tracking with potentially null action identified"
+        },
+        "getTrackingsErrorMessage": {
+          "paragraph1part1": "* You must change the execution conditions of trackings in these blocks to avoid possible errors.",
+          "paragraph1part2": "You can fix these flows automatically by pressing the button below.",
+          "buttonTtitle": "Fix trackings"
+        }
+      }
+    }
+  },
+  "flowComments": {
+    "addCommentsOfBlocks": {
+      "buttonLabel": "Comments"
+    },
+    "addCommentsSideBar": {
+      "createComment": {
+        "successToast": "Comment saved successfully!"
+      },
+      "handleRemoveComment": {
+        "headerMessage": "Do you confirm that you want to delete this comment?",
+        "mainMessage": "This comment will be deleted from all blocks where it was created."
+      },
+      "removeComment": {
+        "toastSuccess": "Comment removed successfully."
+      },
+      "editComment": {
+        "toastSuccess": "Comment saved successfully!",
+        "toastDanger": "Failed to update comment! Please try again."
+      },
+      "body": {
+        "inputValue": "Comments editor",
+        "paragraphComment": "Comment",
+        "addCommentButton": "Add comment",
+        "addCommentParagraphPart1": "Enter your comment below.",
+        "addCommentParagraphPart2": "The comment must contain only text.",
+        "addCommentLabel": "Enter your comment",
+        "saveCommentButton": "Save"
+      }
+    },
+    "flowCommentsSideBar": {
+      "flowCommentsButton": "Comments",
+      "emptyCommentsElement": {
+        "title": "No comments in the flow yet",
+        "paragraphPart1": "You haven't added any comments yet. Do this by right-clicking on a block and selecting the option",
+        "paragraphPart2": "Comments"
+      },
+      "handleRemoveComment": {
+        "headerMessage": "Do you confirm that you want to delete this comment?",
+        "mainMessage": "This comment will be deleted from all blocks where it was created."
+      },
+      "removeComment": {
+        "successToast": "Comment removed successfully."
+      },
+      "editComment": {
+        "successToast": "Comment saved successfully!",
+        "dangerToast": "Failed to update comment! Please try again."
+      },
+      "body": {
+        "input": "Comments",
+        "paragraph": "Comment"
+      }
+    },
+    "removeInactivity": {
+      "successToast": "block(s) changed",
+      "warningToast": "No block changed"
+    }
+  },
+  "replaceVariable": {
+    "handleSubmit": {
+      "setError1": "Enter a valid variable name in Blip",
+      "setError2": "Enter a valid variable name in Blip",
+      "successToast1": "Variable changed successfully!",
+      "successToast2": "Failed to change the variable name!"
+    },
+    "body": {
+      "input1": "Current variable name",
+      "paragraph1": "Enter the new variable name",
+      "input2": "New variable name",
+      "button": "Rename",
+      "paragraph2Part1": "* Changes ",
+      "paragraph2Part2": "ALL",
+      "paragraph2Part3": " occurrences of this variable in the flow and renames it to."
+    }
+  },
+  "sidebar": {
+    "title": "Blip Addons",
+    "globalInactivity": {
+      "title": "Add global inactivity",
+      "paragraph1": {
+        "text1": "All blocks that wait for a user input will have their waiting time limit set to the value below.",
+        "text2": "You still need to publish the flow."
+      },
+      "input": {
+        "label": "Waiting time limit (in minutes)"
+      },
+      "switch": {
+        "label": "Keep waiting time limit if it is already defined"
+      },
+      "horizontalStack": {
+        "buttonSubmit": "Set",
+        "buttonRemove": "Remove*"
+      },
+      "paragraph2": {
+        "text1": "* Removes the waiting time limit from",
+        "text2": "ALL",
+        "text3": "inputs."
+      },
+      "validation": {
+        "required": "Enter a value between 1 and 1380",
+        "invalid": "Use numbers between 1 and 1380"
+      },
+      "toast": {
+        "successToast": "block(s) changed",
+        "warningToast": "No block was changed"
+      }
+    },
+    "setGlobalTrackings": {
+      "title": "Add global trackings",
+      "paragraph1": {
+        "text1": "All blocks that contain the tracking action will have global trackings added.",
+        "text2": "You still need to publish the flow"
+      },
+      "switch": {
+        "label": "Delete defined global trackings"
+      },
+      "horizontalStack": {
+        "buttonAdd": "Add",
+        "buttonDefine": "Define"
+      },
+      "validation": {
+        "required": "There are no trackings yet",
+        "invalid": "You have not added any tracking yet"
+      },
+      "toast": {
+        "successToast": "block(s) changed",
+        "warningToast": "No block changed"
+      },
+      "error": {
+        "message": "Fill in all fields"
+      }
+    },
+    "removeGlobalTrackings": {
+      "title": "Remove global trackings",
+      "paragraph1": {
+        "text1": "All blocks will have the specified trackings removed from their logging actions.",
+        "text2": "You still need to publish the flow"
+      },
+      "horizontalStack": {
+        "buttonAdd": "Add",
+        "buttonRemove": "Remove",
+        "buttonRemoveAll": "Remove All *"
+      },
+      "paragraph2": {
+        "text1": "* Removes global trackings from",
+        "text2": "ALL",
+        "text3": "actions."
+      },
+      "validation": {
+        "required": "There are no trackings yet",
+        "invalid": "You have not added any tracking yet"
+      },
+      "toast": {
+        "successToast": "block(s) changed",
+        "warningToast": "No block changed"
+      },
+      "confirmationAlert": {
+        "headerMessage": "Attention",
+        "mainMessage": "Are you sure you want to perform this action? This will permanently change the flow.",
+        "buttonCancel": "Cancel",
+        "buttonConfirm": "Confirm"
+      }
+    },
+    "editBlockOption": {
+      "typoValue": "Change"
+    },
+    "checkInconsistencies": {
+      "title": "Check flow inconsistencies",
+      "paragraph1": {
+        "text1": "This feature will check for"
+      },
+      "list": {
+        "item1": "Event logs that may have an empty action",
+        "item2": "Loops in the flow",
+        "item3Part1": "Block cascades with more than",
+        "item3Part2": "blocks without user input",
+        "item4": "Block exit conditions or action execution conditions with tautologies"
+      },
+      "switch": {
+        "label1": "Check for loops",
+        "label2": "Check for potentially null trackings",
+        "label3": "Check for tautologies"
+      },
+      "button": {
+        "label": "Check"
+      },
+      "toast": {
+        "successToast": "No inconsistencies were found in the flow.",
+        "warningToast": "Some inconsistency was found in the flow."
+      }
+    },
+    "botStatistics": {
+      "title": "Bot Statistics",
+      "list": {
+        "item1": "Number of blocks:",
+        "item2": "Number of actions per type:",
+        "item3": "HTTP calls:",
+        "item4": "Unique trackings:",
+        "item5": "Scripts:"
+      }
+    },
+    "qualityChecker": {
+      "title": "Quality Checker",
+      "button": {
+        "label": "Run automatic checks"
+      }
+    },
+    "renameVariable": {
+      "title": "Rename variable"
+    }
+  },
+  "toastContainer": {
+    "title": "Configurations of Blip Addons",
+    "sectionResource": "Resources",
+    "keywordConfig": {
+      "title": "Keyword configuration",
+      "input1": "PRODUCTION keywords",
+      "input2": "HOMOLOGATION keywords",
+      "input3": "BETA keywords",
+      "input4": "DEVELOPMENT keywords",
+      "label": "* Reload the open builder pages to load the new settings.",
+      "saveButton": "Save",
+      "toast": {
+        "toastText": "Data saved successfully",
+        "toastTitle": "Success new toast!"
+      }
+    },
+    "snippetsConfig": {
+      "title": "Snippets configuration",
+      "text1": "Add your custom snippets here!",
+      "boxHelper": "You have not added any Snippet yet",
+      "label": "* Reload the open builder pages to load the new snippets.",
+      "addSnippetButton": "Add Snippet",
+      "saveButton": "Save",
+      "AddSnippetBox": {
+        "text1": "Add your custom snippets here!",
+        "newSnippetTitle": "New Snippet",
+        "input1": "Snippet Name",
+        "input2": "Code to be generated",
+        "label": "* Reload the open builder pages to load the new snippets."
+      },
+      "toast": {
+        "toastTextError": "All snippets must have non-empty content",
+        "toastTitleError": "Failed to save Snippets!",
+        "toastTextSuccess": "Data updated successfully",
+        "toastTitleSuccess": "Success!",
+        "toastTextRemoved": "Snippet removed successfully",
+        "toastTitleRemoved": "Success!",
+        "toastTextDuplicated": "There cannot be 2 snippets with the same name",
+        "toastTitleDuplicated": "Failed to save Snippets!"
+      }
+    },
+    "tagConfig": {
+      "title": "Tags configuration",
+      "text1": "Modify your tags and make them unique!",
+      "switch1": "Enable auto tag.",
+      "enable": "Enable",
+      "saveButton": "Save",
+      "restoreButton": "Restore to default",
+      "toast": {
+        "toastTextUpdated": "Tags updated successfully",
+        "toastTitleUpdated": "Success!",
+        "toastTextRestored": "Tags restored to default successfully",
+        "toastTitleRestored": "Success!"
+      }
+    },
+    "devModeConfig": {
+      "title": "DEV mode configurations",
+      "text1": "BLIP optimizations",
+      "home": {
+        "switch1": "Show only routers on home (Also sets page to 120).",
+        "switch2": "Paint routers with the respective colors of the environment filter."
+      },
+      "beholder": {
+        "switch1": "Fix right spacing when opening the test chat in beholder."
+      },
+      "cleanup": {
+        "switch1": "Clear options header.",
+        "switch2": "Remove action and exit conditions tips.",
+        "switch3": "Hide function library."
+      }
+    },
+    "sectionExternalAddress": "External addresses",
+    "reportIssue": "Report an issue",
+    "sectionSelectLanguage": "Select language"
+  },
+  "modal": {
+    "button": "Close"
+  },
+  "editBlockOption": {
+    "typoValue": "Change"
+  }
+}

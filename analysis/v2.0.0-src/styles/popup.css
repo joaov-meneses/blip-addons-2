@@ -1,0 +1,27 @@
+body {
+  width: 600px;
+  min-height: 500px;
+  margin: 0;
+  color: #182d40;
+  background: #f5f7fb;
+  font: 14px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+.addons-header { display: flex; align-items: center; gap: 14px; padding: 22px 24px 18px; background: #132e47; color: white; }
+h1 { margin: 0; font-size: 24px; letter-spacing: -.5px; }
+h1 span { color: #6ce3e8; }
+.addons-header p { margin: 2px 0 0; color: #ccdce9; font-size: 12px; }
+nav { display: flex; gap: 5px; padding: 10px 20px; background: white; border-bottom: 1px solid #dce4ed; }
+nav button { border: 0; background: transparent; color: #456079; padding: 9px 13px; border-radius: 7px; cursor: pointer; font: inherit; }
+nav button[aria-current] { color: #114c80; background: #e9f2fc; font-weight: 650; }
+nav button:hover { background: #edf2f7; }
+nav button:focus-visible { outline: 2px solid #197ac9; outline-offset: 2px; }
+.addons-content { padding: 20px 24px; }
+h2 { font-size: 16px; margin: 0 0 10px; }
+p { margin: 8px 0; }
+.addons-card { padding: 18px; border: 1px solid #dfe7ef; border-radius: 10px; background: white; margin-bottom: 14px; }
+.addons-integrations { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+.addons-integrations span { padding: 3px 8px; font-size: 11px; border-radius: 5px; background: #edf4f8; color: #235270; }
+.addons-note { font-size: 12px; color: #546b7e; }
+footer { padding: 10px 24px 16px; color: #687c8c; font-size: 11px; }
+.toast-container { position: fixed; top: 8px; left: 8px; z-index: 10000; }

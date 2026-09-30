@@ -1,0 +1,335 @@
+{
+  "home": {
+    "filter": {
+      "title": "Filtrar por ambiente",
+      "option1": "Todos",
+      "option2": "Producción (PRD)",
+      "option3": "Homologación (HMG)",
+      "option4": "Beta (BETA)",
+      "option5": "Desarrollo (DEV)"
+    }
+  },
+  "contractViewer": {
+    "title": "Filtrar entre los contratos"
+  },
+  "checkInconsistencies": {
+    "loopsAndMaxBlocks": {
+      "getLoopMessage": {
+        "title": "Loops en el flujo",
+        "paragraph1": "Se encontró el siguiente loop en el flujo:",
+        "paragraph2Pt1": "* Debes cambiar las condiciones de salida de algunos de estos bloques para evitar el posible loop.",
+        "paragraph2Pt2": "* Recuerda verificar la condición de salida predeterminada de los bloques."
+      },
+      "getMaxBlocksMessage": {
+        "title": "Loops en el flujo",
+        "paragraph1": "Se encontró la siguiente cascada de bloques sin entrada del usuario en el flujo:",
+        "paragraph2": "* Debes eliminar bloques en esta cascada o agregar una espera por entrada del usuario. No puede haber una cascada con más de 35 bloques sin entrada del usuario."
+      },
+      "getSuccessMessage": {
+        "title": "Sin loops en el flujo",
+        "paragraph1": "No se encontraron loops en el flujo."
+      },
+      "trackings": {
+        "getTrackingMessage": {
+          "paragraph1": "Ningún tracking con acción potencialmente nula identificado"
+        },
+        "getTrackingsErrorMessage": {
+          "paragraph1part1": "* Debes cambiar las condiciones de ejecución de los trackings en estos bloques para evitar posibles errores.",
+          "paragraph1part2": "Puedes corregir estos flujos automáticamente presionando el botón de abajo.",
+          "buttonTtitle": "Corregir trackings"
+        }
+      }
+    }
+  },
+  "flowComments": {
+    "addCommentsOfBlocks": {
+      "buttonLabel": "Comentarios"
+    },
+    "addCommentsSideBar": {
+      "createComment": {
+        "successToast": "Comentario guardado con éxito!"
+      },
+      "handleRemoveComment": {
+        "headerMessage": "¿Confirma que desea eliminar este comentario?",
+        "mainMessage": "Este comentario será eliminado de todos los bloques donde fue creado."
+      },
+      "removeComment": {
+        "toastSuccess": "Comentario eliminado con éxito."
+      },
+      "editComment": {
+        "toastSuccess": "Comentario guardado con éxito!",
+        "toastDanger": "Error al actualizar el comentario! Por favor, inténtelo de nuevo."
+      },
+      "body": {
+        "inputValue": "Editor de comentarios",
+        "paragraphComment": "Comentario",
+        "addCommentButton": "Agregar comentario",
+        "addCommentParagraphPart1": "Ingrese su comentario abajo.",
+        "addCommentParagraphPart2": "El comentario debe contener solo texto.",
+        "addCommentLabel": "Ingrese su comentario",
+        "saveCommentButton": "Guardar"
+      }
+    },
+    "flowCommentsSideBar": {
+      "flowCommentsButton": "Comentarios",
+      "emptyCommentsElement": {
+        "title": "Aún no hay comentarios en el flujo",
+        "paragraphPart1": "Aún no has añadido ningún comentario. Hazlo haciendo clic derecho en algún bloque y seleccionando la opción",
+        "paragraphPart2": "Comentarios"
+      },
+      "handleRemoveComment": {
+        "headerMessage": "¿Confirma que desea eliminar este comentario?",
+        "mainMessage": "Este comentario será eliminado de todos los bloques donde fue creado."
+      },
+      "removeComment": {
+        "successToast": "Comentario eliminado con éxito."
+      },
+      "editComment": {
+        "successToast": "Comentario guardado con éxito!",
+        "dangerToast": "Error al actualizar el comentario! Por favor, inténtelo de nuevo."
+      },
+      "body": {
+        "input": "Comentarios",
+        "paragraph": "Comentario"
+      }
+    },
+    "removeInactivity": {
+      "successToast": "bloque(s) cambiado(s)",
+      "warningToast": "Ningún bloque cambiado"
+    }
+  },
+  "replaceVariable": {
+    "handleSubmit": {
+      "setError1": "Ingresa un nombre de variable válido en Blip",
+      "setError2": "Ingresa un nombre de variable válido en Blip",
+      "successToast1": "¡Variable modificada con éxito!",
+      "successToast2": "¡Error al cambiar el nombre de la variable!"
+    },
+    "body": {
+      "input1": "Nombre actual de la variable",
+      "paragraph1": "Ingresa el nuevo nombre de la variable",
+      "input2": "Nuevo nombre de la variable",
+      "button": "Renombrar",
+      "paragraph2Part1": "* Cambia ",
+      "paragraph2Part2": "TODAS",
+      "paragraph2Part3": "las ocurrencias de esta variable en el flujo y las renombra a."
+    }
+  },
+  "sidebar": {
+    "title": "Blip Addons",
+    "globalInactivity": {
+      "title": "Añadir inactividad global",
+      "paragraph1": {
+        "text1": "Todos los bloques que esperan una entrada del usuario tendrán el límite de espera establecido en el valor de abajo.",
+        "text2": "Aún tienes que publicar el flujo."
+      },
+      "input": {
+        "label": "Límite de espera (en minutos)"
+      },
+      "switch": {
+        "label": "Mantener el límite de espera si ya está definido."
+      },
+      "horizontalStack": {
+        "buttonSubmit": "Guardar",
+        "buttonRemove": "Eliminar*"
+      },
+      "paragraph2": {
+        "text1": "* Elimina el límite de espera de",
+        "text2": "TODOS",
+        "text3": "los registros."
+      },
+      "validation": {
+        "required": "Rellena con un valor entre 1 y 1380",
+        "invalid": "Utiliza números entre 1 y 1380"
+      },
+      "toast": {
+        "successToast": "bloque(s) cambiado(s)",
+        "warningToast": "No se ha modificado ningún bloque"
+      }
+    },
+    "setGlobalTrackings": {
+      "title": "Añadir trackings globales",
+      "paragraph1": {
+        "text1": "Todos los bloques que contengan la acción de tracking tendrán añadidos los trackings globales.",
+        "text2": "Aún tienes que publicar el flujo"
+      },
+      "switch": {
+        "label": "Eliminar trackings globales definidos"
+      },
+      "horizontalStack": {
+        "buttonAdd": "Añadir",
+        "buttonDefine": "Definir"
+      },
+      "validation": {
+        "required": "Aún no hay trackings",
+        "invalid": "No has añadido ningún tracking"
+      },
+      "toast": {
+        "successToast": "bloque(s) cambiado(s)",
+        "warningToast": "Ningún bloque cambiado"
+      },
+      "error": {
+        "message": "Rellena todos los campos"
+      }
+    },
+    "removeGlobalTrackings": {
+      "title": "Eliminar trackings globales",
+      "paragraph1": {
+        "text1": "Todos los bloques tendrán los trackings especificados eliminados de las acciones de registro.",
+        "text2": "Aún tienes que publicar el flujo"
+      },
+      "horizontalStack": {
+        "buttonAdd": "Añadir",
+        "buttonRemove": "Eliminar",
+        "buttonRemoveAll": "Eliminar todos *"
+      },
+      "paragraph2": {
+        "text1": "* Eliminar los trackings globales de",
+        "text2": "TODAS",
+        "text3": "las acciones."
+      },
+      "validation": {
+        "required": "Aún no hay trackings",
+        "invalid": "Aún no has añadido ningún tracking"
+      },
+      "toast": {
+        "successToast": "bloque(s) cambiado(s)",
+        "warningToast": "Ningún bloque cambiado"
+      },
+      "confirmationAlert": {
+        "headerMessage": "Atención",
+        "mainMessage": "¿Estás seguro de que quieres realizar esta acción? Esto cambiará el flujo definitivamente.",
+        "buttonCancel": "Cancelar",
+        "buttonConfirm": "Confirmar"
+      }
+    },
+    "editBlockOption": {
+      "typoValue": "Cambiar"
+    },
+    "checkInconsistencies": {
+      "title": "Verificar inconsistencias en el flujo",
+      "paragraph1": {
+        "text1": "Este recurso buscará"
+      },
+      "list": {
+        "item1": "Registros de eventos que pueden tener la acción vacía",
+        "item2": "Loops en el flujo",
+        "item3Part1": "Cascada de bloques con más de",
+        "item3Part2": "bloques sin entrada del usuario",
+        "item4": "Condiciones de salida de bloques o de ejecución de acciones con tautologías"
+      },
+      "switch": {
+        "label1": "Verificar la existencia de loops",
+        "label2": "Verificar trackings potencialmente nulos",
+        "label3": "Verificar tautologías"
+      },
+      "button": {
+        "label": "Confirmar"
+      },
+      "toast": {
+        "successToast": "No se encontró ninguna inconsistencia en el flujo.",
+        "warningToast": "Se ha detectado alguna inconsistencia en el flujo."
+      }
+    },
+    "botStatistics": {
+      "title": "Estadísticas del bot",
+      "list": {
+        "item1": "Cantidad de bloques:",
+        "item2": "Cantidad de acciones por tipo:",
+        "item3": "Llamadas HTTP:",
+        "item4": "Trackings únicos:",
+        "item5": "Scripts:"
+      }
+    },
+    "qualityChecker": {
+      "title": "Quality Checker",
+      "button": {
+        "label": "Realizar comprobaciones automáticas"
+      }
+    },
+    "renameVariable": {
+      "title": "Renombrar variable"
+    }
+  },
+  "toastContainer": {
+    "title": "Configuración de Blip Addons",
+    "sectionResource": "Recursos",
+    "keywordConfig": {
+      "title": "Configuración de palabras clave",
+      "input1": "Palabras clave de PRODUCCIÓN",
+      "input2": "Palabras clave de HOMOLOGACIÓN",
+      "input3": "Palabras clave de BETA",
+      "input4": "Palabras clave de DESARROLLO",
+      "label": "* Recargue las páginas del builder abiertas para cargar los nuevos ajustes.",
+      "saveButton": "Guardar",
+      "toast": {
+        "toastText": "Datos guardados con éxito",
+        "toastTitle": "¡Éxito nuevo toast!"
+      }
+    },
+    "snippetsConfig": {
+      "title": "Configuración de snippets",
+      "text1": "¡Agregue aquí sus snippets personalizados!",
+      "boxHelper": "Aún no has agregado ningún Snippet",
+      "label": "* Recargue las páginas del builder abiertas para cargar los nuevos snippets.",
+      "addSnippetButton": "Añadir Snippet",
+      "saveButton": "Guardar",
+      "AddSnippetBox": {
+        "text1": "¡Agregue aquí sus snippets personalizados!",
+        "newSnippetTitle": "Nuevo Snippet",
+        "input1": "Nombre del Snippet",
+        "input2": "Código a generar",
+        "label": "* Recargue las páginas del builder abiertas para cargar los nuevos snippets."
+      },
+      "toast": {
+        "toastTextError": "Todos los snippets deben tener un contenido no vacío",
+        "toastTitleError": "¡Error al guardar los Snippets!",
+        "toastTextSuccess": "Datos actualizados con éxito",
+        "toastTitleSuccess": "¡Éxito!",
+        "toastTextRemoved": "Snippet eliminado con éxito",
+        "toastTitleRemoved": "¡Éxito!",
+        "toastTextDuplicated": "No pueden haber 2 snippets con el mismo nombre",
+        "toastTitleDuplicated": "¡Error al guardar los Snippets!"
+      }
+    },
+    "tagConfig": {
+      "title": "Configuración de etiquetas",
+      "text1": "¡Modifique sus etiquetas y hágalas únicas!",
+      "switch1": "Habilitar auto tag.",
+      "enable": "Habilitar",
+      "saveButton": "Guardar",
+      "restoreButton": "Volver al predeterminado",
+      "toast": {
+        "toastTextUpdated": "Etiquetas actualizadas con éxito",
+        "toastTitleUpdated": "¡Éxito!",
+        "toastTextRestored": "Etiquetas restauradas al predeterminado con éxito",
+        "toastTitleRestored": "¡Éxito!"
+      }
+    },
+    "devModeConfig": {
+      "title": "Configuraciónes modo DEV",
+      "text1": "Optimizaciones BLIP",
+      "home": {
+        "switch1": "Mostrar solo routers en home (También establece página a 120).",
+        "switch2": "Pinta los routers con las cores respectivas del filtro de ambiente."
+      },
+      "beholder": {
+        "switch1": "Corrige espaciado de la derecha cuando abre el chat de prueba en beholder."
+      },
+      "cleanup": {
+        "switch1": "Limpia header de opciones.",
+        "switch2": "Tira las dicas para acciones y condiciones de salida.",
+        "switch3": "Esconde librería de funciones."
+      }
+    },
+    "sectionExternalAddress": "Direcciones externas",
+    "reportIssue": "Reportar un problema",
+    "sectionSelectLanguage": "Seleccionar idioma"
+  },
+  "modal": {
+    "button": "Cerrar"
+  },
+  "editBlockOption": {
+    "typoValue": "Cambiar"
+  }
+}

@@ -1,0 +1,346 @@
+[
+  {
+    "file": "app/Components/DescriptionText/index.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Components/EditableInput/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Components/Flex/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Components/HorizontalStack/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Components/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Components/Input/index.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Components/Modal/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/AddButtonToBuilder/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/AddResourceFunctionalities/Constants.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/AddResourceFunctionalities/CopyContentIcon.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/AddResourceFunctionalities/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/AddSidebar/BlipAddonsButton.tsx",
+    "status": "merged"
+  },
+  {
+    "file": "app/Features/AddSidebar/BlipsSidebar.tsx",
+    "status": "conflict"
+  },
+  {
+    "file": "app/Features/AddSidebar/index.tsx",
+    "status": "conflict"
+  },
+  {
+    "file": "app/Features/AutoTag/AutoTag.ts",
+    "status": "conflict"
+  },
+  {
+    "file": "app/Features/AutoTag/Constants.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/AutoTag/tagsHandler.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/BotStatistics/index.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/BotStatistics/StatisticsForms.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/ChangeBeholderView/Constants.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/ChangeBeholderView/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/ChangeContractsView/Constants.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/ChangeContractsView/Filter.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/ChangeContractsView/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/CheckInconsistencies/InconsistenciesForm.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/CheckInconsistencies/LoopsAndMaxBlocks/index.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/CheckInconsistencies/Tautology/index.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/CheckInconsistencies/Trackings/index.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/CleanEnvironment/CleanButton.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/CleanEnvironment/index.tsx",
+    "status": "conflict"
+  },
+  {
+    "file": "app/Features/CleanupByDevMode/Constants.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/CleanupByDevMode/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/CopyBlock/index.ts",
+    "status": "merged"
+  },
+  {
+    "file": "app/Features/EditBlocks/ChangeBlockColor/index.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/EditBlocks/ChangeBlockFormat/index.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/EditBlocks/ChangeTextColor/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/EditBlocks/EditBlockOption.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/EditBlocks/index.tsx",
+    "status": "conflict"
+  },
+  {
+    "file": "app/Features/FilterBots/Constants.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/FilterBots/Filter.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/FilterBots/index.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/FilterOnlyRouters/Constants.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FilterOnlyRouters/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/AddCommentsOfBlocks/AddCommentOption.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/AddCommentsOfBlocks/AddCommentsSidebar.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/AddCommentsOfBlocks/Constants.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/AddCommentsOfBlocks/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/AddCommentsSidebar/FlowCommentsButton.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/AddCommentsSidebar/FlowCommentsSidebar.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/AddCommentsSidebar/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/Constants.ts",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/FlowCommentsUtils.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/FlowComments/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/index.ts",
+    "status": "merged"
+  },
+  {
+    "file": "app/Features/OriginalCaseInput/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/QualityCheck/Forms.tsx",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/QualityCheck/style.css",
+    "status": "added"
+  },
+  {
+    "file": "app/Features/RemoveGlobalTrackings/ConfirmationAlert.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/RemoveGlobalTrackings/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/RemoveGlobalTrackings/RemoveGlobalTrackingsForm.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/RemoveInactivity/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/SetGlobalTrackings/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/SetGlobalTrackings/SetGlobalTrackingsForm.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/SetInactivity/GlobalInactivityForm.tsx",
+    "status": "updated"
+  },
+  {
+    "file": "app/Features/SetInactivity/index.ts",
+    "status": "updated"
+  },
+  {
+    "file": "app/Settings.ts",
+    "status": "merged"
+  },
+  {
+    "file": "app/Utils.tsx",
+    "status": "conflict"
+  },
+  {
+    "file": "components/LanguageSelect/index.tsx",
+    "status": "added"
+  },
+  {
+    "file": "i18n/index.ts",
+    "status": "added"
+  },
+  {
+    "file": "i18n/translations.ts",
+    "status": "added"
+  },
+  {
+    "file": "locales/en/common.json",
+    "status": "added"
+  },
+  {
+    "file": "locales/es/common.json",
+    "status": "added"
+  },
+  {
+    "file": "locales/ptbr/common.json",
+    "status": "added"
+  },
+  {
+    "file": "styles/Ellipse.svg",
+    "status": "updated"
+  },
+  {
+    "file": "styles/LeftConcave.svg",
+    "status": "updated"
+  },
+  {
+    "file": "styles/LowerConcave.svg",
+    "status": "updated"
+  },
+  {
+    "file": "styles/MainDiagonalConcave.svg",
+    "status": "updated"
+  },
+  {
+    "file": "styles/Rectangle.svg",
+    "status": "updated"
+  },
+  {
+    "file": "styles/RightConcave.svg",
+    "status": "updated"
+  },
+  {
+    "file": "styles/SecondaryDiagonalConcave.svg",
+    "status": "updated"
+  },
+  {
+    "file": "styles/UpperConcave.svg",
+    "status": "updated"
+  },
+  {
+    "file": "ui/App.tsx",
+    "status": "conflict"
+  },
+  {
+    "file": "ui/pages/DevMode.tsx",
+    "status": "added"
+  },
+  {
+    "file": "ui/pages/KeywordConfig.tsx",
+    "status": "merged"
+  },
+  {
+    "file": "ui/pages/SnippetsConfig.tsx",
+    "status": "merged"
+  },
+  {
+    "file": "ui/pages/TagsConfig.tsx",
+    "status": "merged"
+  }
+]
