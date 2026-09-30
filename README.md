@@ -5,6 +5,7 @@ Extensão Chrome Manifest V3 que reúne o **Better Blip Builder 3.0.46** e o **B
 - [ZIP para instalação facilitada: Blip-Addons-2.6.2.zip](instalacao/Blip-Addons-2.6.2.zip). Ele já vem com a pasta `dist` pronta e está incluído no repositório.
 - Quem recompilar o projeto também pode selecionar a pasta `dist/` gerada localmente.
 - [Instruções de instalação](docs/INSTALACAO.md).
+- [Guia visual: popup da extensão e recursos no Builder](docs/GUIA-VISUAL.md).
 - [Habilitar/desabilitar módulos e Nova integração](docs/INSTALACAO.md#configurar-os-módulos).
 - [Análise do funcionamento e da união](docs/ANALISE.md).
 - [Diferenças e atualização para a base 1.3.9](docs/ATUALIZACAO-2.1.0.md).
@@ -20,6 +21,14 @@ Extensão Chrome Manifest V3 que reúne o **Better Blip Builder 3.0.46** e o **B
 4. Confirme que **Blip Addons 2.0** aparece na lista e recarregue as abas da Blip que já estavam abertas.
 
 Para evitar recursos duplicados, desative as extensões antigas **Better Blip Builder** e **Blip Addons** se estiverem instaladas. O ZIP é para extração e carregamento sem compactação; não precisa de Node.js para instalar. Veja [instruções de atualização e uso](docs/INSTALACAO.md).
+
+## Como usar
+
+O [guia visual](docs/GUIA-VISUAL.md) mostra, com capturas da versão 2.6.2, as configurações no popup e as funções dentro do Blip Builder.
+
+<img src="docs/images/popup-2.6.2-inicio.jpg" alt="Visão geral do popup Blip Addons 2.0" width="540">
+
+<img src="docs/images/builder-2.6.2-overview.jpg" alt="Aba Builder 2.0 nas configurações gerais da Blip" width="360">
 
 ## Recompilar
 

@@ -4,6 +4,7 @@
 
 O botão Reportar um problema foi retirado do menu lateral do popup. A versão permanece visível no rodapé.
 O ZIP em `instalacao/` contém uma pasta `dist` pronta para selecionar em **Carregar sem compactação**. O script de empacotamento confere `dist/manifest.json` e a quantidade de arquivos contra o build; esse ZIP é incluído no Git, enquanto `dist/` e `release/` continuam ignorados.
+O [guia visual](GUIA-VISUAL.md) reúne capturas do popup compilado e da aba Builder 2.0 no Chrome. A confirmação de Fix Action Names foi aberta e cancelada para a captura; nenhuma operação em massa foi confirmada no fluxo.
 
 ## Versão 2.6.1
 

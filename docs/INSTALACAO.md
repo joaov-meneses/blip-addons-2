@@ -15,6 +15,8 @@ Extraia o novo ZIP e substitua os arquivos na **mesma pasta `dist`** já carrega
 
 ## Usar
 
+Veja também o [guia visual](GUIA-VISUAL.md), com capturas do popup e das funções dentro do Builder.
+
 - **Integrações**: no Builder, abra o menu de adicionar blocos → **Nova integração**. Abra a aba **Integração**, selecione um dos 13 serviços e configure a ação. Use vários blocos para combinar integrações no fluxo.
 - **Utilitários**: abra as configurações gerais do Builder e selecione a aba **Builder 2.0**, à direita de **Ações globais**. Se as abas não couberem no painel, use a seta nativa. Expanda o módulo desejado. Abrir a aba não altera o fluxo.
 - **Fix Action Names**: no popup da extensão, abra **Nomes das ações**, escolha os tipos, edite os modelos e clique em **Salvar modelos**. Na última seção da aba Builder 2.0, clique em **Aplicar** e confirme para renomear as ações do fluxo aberto. O ícone circular restaura as preferências padrão sem alterar o fluxo. [Veja os modelos e exemplos](FIX-ACTION-NAMES.md).
